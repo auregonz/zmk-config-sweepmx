@@ -1,0 +1,7 @@
+# Define Keyboard
+
+config SHIELD_SWEEPMX_LEFT
+	def_bool $(shields_list_contains,sweepmx_left)
+
+config SHIELD_SWEEPMX_RIGHT
+	def_bool $(shields_list_contains,sweepmx_right)
