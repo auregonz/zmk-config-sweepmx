@@ -24,7 +24,7 @@
 #define FR_MINUS N6     // -
 #define FR_EGRAVE N7    // è
 #define FR_UNDER N8     // _
-#define FR_CCDEDIL N9   // ç
+#define FR_CCEDIL N9    // ç
 #define FR_AGRAVE N0    // à
 #define FR_RPAR MINUS   // )
 #define FR_EQUAL EQUAL  // =
