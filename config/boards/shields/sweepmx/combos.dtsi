@@ -1,0 +1,38 @@
+#include "keycodes.h"
+
+compatible = "zmk,combos";
+
+#define COMBO(NAME, BINDINGS, KEYPOS, LAYERS) \
+  combo_##NAME { \
+    bindings = <BINDINGS>; \
+    key-positions = <KEYPOS>; \
+    layers = <LAYERS>; \
+  };
+
+/*                KEY POSITIONS
+  ╭────────────────────╮ ╭────────────────────╮
+  │  0   1   2   3   4 │ │  5   6   7   8   9 │
+  │ 10  11  12  13  14 │ │ 15  16  17  18  19 │
+  │ 20  21  22  23  24 │ │ 25  26  27  28  29 │
+  ╰───────────╮ 30  31 │ │ 32  32 ╭───────────╯
+              ╰────────╯ ╰────────╯
+*/
+
+// Layer ACCNUM
+// COMBO(c_ecirc_min, ---, 1 2, ACCNUM) // ê
+// COMBO(c_ecirc_maj, ---, 1 2, ACCNUM) // Ê
+
+// Layer SYMNAV
+COMBO(c_prct, _PRCNT_, 1 2, SYMNAV) // %
+COMBO(c_doll, _DOLLAR, 1 2, SYMNAV) // $
+COMBO(c_livr, _LIVRE_, 1 2, SYMNAV) // £
+COMBO(c_euro, _EURO__, 1 2, SYMNAV) // €
+COMBO(c_curr, _CURR__, 1 2, SYMNAV) // ¤
+// COMBO(c_ens_vide, ---, 1 2, SYMNAV) // Ø
+COMBO(c_circ, _CIRC__, 1 2, SYMNAV) // ^
+COMBO(c_bslh, _BSLH__, 1 2, SYMNAV) // Backslash
+COMBO(c_tild, _TILDE_, 1 2, SYMNAV) // ~
+COMBO(c_arob, __AT___, 1 2, SYMNAV) // @
+COMBO(c_hash, _HASH__, 1 2, SYMNAV) // #
+
+COMBO(c_blth, _BLTH_L, 21 22 30, LEFT) // Bluetooth

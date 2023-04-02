@@ -5,6 +5,10 @@
 #define _RESET_ &reset          // Reset : Reset the keyboard side and re-run the firmware flashed to the device
 #define _BTLDR_ &bootloader     // Bootloader Reset : Reset the keyboard side and put it into bootloader mode
 
+// Layers
+#define _BLTH_L &lp 4
+
+
 // Bluetooth
 #define _BT_CLR &bt BT_CLR      // Clear paired host the the selected profile
 #define _BT_NXT &bt BT_NXT      // Select Next Profile
@@ -146,7 +150,7 @@
 #define _RBKT__ &kp RA(MINUS)   // ]
 #define _RBRC__ &kp RA(EQUAL)   // }
 // Row 2 
-#define _EURO__ &kp RA(E)       // a
+#define _EURO__ &kp RA(E)       // Euro
 #define _CURR__ &kp RA(RBKT)    // ¤ Currency : Symbole monétaire générique
 
 // Control & Whitespace

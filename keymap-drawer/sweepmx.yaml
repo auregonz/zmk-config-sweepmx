@@ -22,17 +22,17 @@ layers:
     - "O"
     - "P"
 
-    - { t: "Q", h: "TAB" }
-    - { t: "S", h: "LALT" }
+    - { t: "Q", h: "WIN" }
+    - { t: "S", h: "ALT" }
     - { t: "D", h: "LCTRL" }
     - { t: "F", h: "LSHFT" }
-    - { t: "G", h: "LGUI" }
+    - { t: "G", h: "ALTGR" }
 
     - { t: "H", h: "ALTGR" }
     - { t: "J", h: "RSHFT" }
     - { t: "K", h: "RCTRL" }
-    - { t: "L", h: "ENTER" }
-    - { t: "M", h: "BKSPC" }
+    - { t: "L", h: "ALT" }
+    - { t: "M", h: "WIN" }
 
     - "Z"
     - "X"
@@ -41,10 +41,10 @@ layers:
     - "B"
 
     - "N"
-    - ","
-    - ";"
-    - ":"
-    - "!"
+    - { t: ",", s: "?" }
+    - { t: ";", s: "." }
+    - { t: ":", s: "/" }
+    - { t: "!", s: "§" }
 
     - { t: "TAB", h: "ACCNUM" }
     - "SPACE"
@@ -53,9 +53,9 @@ layers:
     - { t: "BKSPC", h: "SYMNAV" }
 
   ACCNUM:
-    - { t: "à", s: "@" }
-    - { t: "é", s: "~" }
-    - { t: "è", s: "`" }
+    - "à"
+    - "é"
+    - "è"
     - "ù"
     - "ç"
 
@@ -65,17 +65,17 @@ layers:
     - "9"
     - "/"
 
-    - { t: "À", h: "TAB" }
-    - { t: "É", h: "LALT" }
+    - { t: "À", h: "WIN" }
+    - { t: "É", h: "ALT" }
     - { t: "È", h: "LCTRL" }
     - { t: "Ù", h: "LSHFT" }
-    - { t: "Ç", h: "LGUI" }
+    - { t: "Ç", h: "ALTGR" }
 
-    - "+"
-    - "4"
-    - "5"
-    - "6"
-    - "-"
+    - { t: "+", h: "ALTGR" }
+    - { t: "4", h: "RSHFT" }
+    - { t: "5", h: "RCTRL" }
+    - { t: "6", h: "ALT" }
+    - { t: "-", h: "WIN" }
 
     - "²"
     - { t: "ë", h: "Ë" }
@@ -108,17 +108,17 @@ layers:
     - "END"
     - "ESCAPE"
 
-    - { t: "<", h: "TAB" }
-    - { t: "[", h: "LALT" }
+    - { t: "<", h: "WIN" }
+    - { t: "[", h: "ALT" }
     - { t: "{", h: "LCTRL" }
     - { t: "(", h: "LSHFT" }
-    - { t: "&", h: "LGUI" }
+    - { t: "&", h: "ALTGR" }
 
     - "PAGE DOWN"
     - "LEFT"
     - "DOWN"
     - "RIGHT"
-    - "TAB"
+    - "CONTEXT MENU"
 
     - ">"
     - "]"
@@ -227,6 +227,13 @@ layers:
 combos:
   - { p: [1, 2], k: "ê", l: ["ACCNUM"] }
   - { p: [11, 12], k: "Ê", l: ["ACCNUM"] }
+  - { p: [0, 0], k: "@", l: ["ACCNUM"], a: top, dendron: false, offset: -0.1, type: ghost }
+  - { p: [1, 1], k: "~", l: ["ACCNUM"], a: top, dendron: false, offset: -0.1, type: ghost }
+  - { p: [2, 2], k: "`", l: ["ACCNUM"], a: top, dendron: false, offset: -0.1, type: ghost }
+
+  - { p: [21, 21], k: "Ë", l: ["ACCNUM"], a: bottom, dendron: false, offset: -0.1, type: held }
+  - { p: [22, 22], k: "~", l: ["ACCNUM"], a: bottom, dendron: false, offset: -0.1, type: held }
+  - { p: [23, 23], k: "`", l: ["ACCNUM"], a: bottom, dendron: false, offset: -0.1, type: held }
 
   - { p: [0, 10], k: "%", l: ["SYMNAV"] }
   - { p: [1, 11], k: "$", l: ["SYMNAV"] }

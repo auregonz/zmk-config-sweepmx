@@ -1,0 +1,76 @@
+// #include "keycodes.h"
+
+#define str(a) #a // Stringify
+
+// Macros for accent
+#define M_ACC_D(name, accent, letter) \
+  / { \
+      macros { \
+          name: name { \
+              label = str(M_ACC_D_ ## name); \
+              compatible = "zmk,behavior-macro"; \
+              #binding-cells = <0>; \
+              tap-ms = <1>; \
+              wait-ms = <1>; \
+              bindings = <&macro_tap accent letter>;  \
+          }; \
+      }; \
+  }
+
+// / {
+//   macros {
+//     sentence_dot: sentence_dot {
+//       label = "sentence_dot";
+//       compatible = "zmk,behavior-macro";
+//       #binding-cells = <0>;
+//       tap-ms = <1>;
+//       wait-ms = <1>;
+//       bindings = <&kp BSPC &kp DOT &kp SPC &sk LSHFT>;
+//     };
+//     sentence_comma: sentence_comma {
+//       label = "sentence_comma";
+//       compatible = "zmk,behavior-macro";
+//       #binding-cells = <0>;
+//       tap-ms = <1>;
+//       wait-ms = <1>;
+//       bindings = <&kp BSPC &kp COMMA &kp SPC>;
+//     };
+//     sentence_apos: sentence_apos {
+//       label = "sentence_apos";
+//       compatible = "zmk,behavior-macro";
+//       #binding-cells = <0>;
+//       tap-ms = <1>;
+//       wait-ms = <1>;
+//       bindings = <&kp BSPC &kp APOS>;
+//     };
+//   };
+//   behaviors {
+//     hold_prefer_dot: hold_prefer_dot {
+//       compatible = "zmk,behavior-hold-tap";
+//       label = "hold_prefer_dot";
+//       #binding-cells = <2>;
+//       tapping_term_ms = <200>;
+//       quick_tap_ms = <0>;
+//       flavor = "tap-preferred";
+//       bindings = <&kp>, <&sentence_dot>;
+//     };
+//     hold_prefer_comma: hold_prefer_comma {
+//       compatible = "zmk,behavior-hold-tap";
+//       label = "hold_prefer_comma";
+//       #binding-cells = <2>;
+//       tapping_term_ms = <200>;
+//       quick_tap_ms = <0>;
+//       flavor = "tap-preferred";
+//       bindings = <&kp>, <&sentence_comma>;
+//     };
+//     hold_prefer_apos: hold_prefer_apos {
+//       compatible = "zmk,behavior-hold-tap";
+//       label = "hold_prefer_apos";
+//       #binding-cells = <2>;
+//       tapping_term_ms = <200>;
+//       quick_tap_ms = <0>;
+//       flavor = "tap-preferred";
+//       bindings = <&kp>, <&sentence_apos>;
+//     };
+//   };
+// };
