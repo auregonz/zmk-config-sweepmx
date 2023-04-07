@@ -1,0 +1,84 @@
+<svg width="500.0" height="185.0" viewBox="0 0 500.0 185.0" xmlns="http://www.w3.org/2000/svg">
+<style>/* font and background color specifications */
+svg {
+    font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,monospace;
+    font-size: 14px;
+    font-kerning: normal;
+    text-rendering: optimizeLegibility;
+    fill: #24292e;
+}
+
+/* default key styling */
+rect {
+    fill: #f6f8fa;
+    stroke: #c9cccf;
+    stroke-width: 1;
+}
+
+/* color accent for combo boxes */
+rect.combo {
+    fill: #cdf;
+}
+
+/* color accent for held keys */
+rect.held, rect.combo.held {
+    fill: #fdd;
+}
+
+/* color accent for ghost (optional) keys */
+rect.ghost, rect.combo.ghost {
+    fill: #ddd;
+}
+
+text {
+    text-anchor: middle;
+    dominant-baseline: middle;
+}
+
+/* styling for layer labels */
+text.label {
+    font-weight: bold;
+    text-anchor: start;
+    stroke: white;
+    stroke-width: 2;
+    paint-order: stroke;
+}
+
+/* styling for combo tap, and key hold/shifted label text */
+text.combo, text.hold, text.shifted {
+    font-size: 11px;
+}
+
+text.hold {
+    text-anchor: middle;
+    dominant-baseline: auto;
+}
+
+text.shifted {
+    text-anchor: middle;
+    dominant-baseline: hanging;
+}
+
+/* styling for hold/shifted label text in combo box */
+text.combo.hold, text.combo.shifted {
+    font-size: 8px;
+}
+
+/* styling for combo dendrons */
+path {
+    stroke-width: 1;
+    stroke: gray;
+    fill: none;
+}
+</style>
+<g class="legend">
+<rect rx="6.0" ry="6.0" x="20.0" y="20.0" width="50.0" height="25.0" class=""/>
+<text x="80.0" y="35.0" class="label">Touche normale</text>
+<rect rx="6.0" ry="6.0" x="20.0" y="60.0" width="50.0" height="25.0" class="ghost"/>
+<text x="80.0" y="75.0" class="label">Appuyer sur AltGr en même temps</text>
+<rect rx="6.0" ry="6.0" x="20.0" y="100.0" width="50.0" height="25.0" class="held"/>
+<text x="80.0" y="115.0" class="label">Touche maintenue</text>
+<rect rx="6.0" ry="6.0" x="20.0" y="140.0" width="50.0" height="25.0" class="combo"/>
+<text x="80.0" y="155.0" class="label">Combo, presser les touches simultanément</text>
+</g>
+</svg>
