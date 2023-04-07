@@ -256,7 +256,7 @@
 
         // Layer ACCNUM
         COMBO(c_ecirc_min, &m_ecirc_min, 1 2, ACCNUM) // ê
-        COMBO(c_ecirc_maj, m_ecirc_maj, 11 12, ACCNUM) // Ê
+        COMBO(c_ecirc_maj, &m_ecirc_maj, 11 12, ACCNUM) // Ê
 
         // Layer SYMNAV
         COMBO(c_prct, _PRCNT_, 0 10, SYMNAV) // %
