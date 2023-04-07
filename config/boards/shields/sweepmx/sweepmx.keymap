@@ -20,7 +20,7 @@
 // === Layer Keys ===
 #define __TAB_1 &lt 1 __TAB__   // Tab or Layer 1 if hold
 #define _BSPC_2 &lt 2 _BSPC__   // Backspace or Layer 2 if hold
-// #define _BLTH_L &lt BLTH        // Bluetooth layer
+#define _BLTH_L &lt BLTH        // Bluetooth layer
 
 // --------------------
 
