@@ -47,6 +47,7 @@
 #define _ITREMM &m_itrem_maj
 #define _UTREM_ &m_utrem_min
 #define _UTREMM &m_utrem_maj
+#define _ENSVID &m_ensvid_maj
 
 // --------------------
 
@@ -222,6 +223,19 @@
                     = <&macro_tap _TREMA_ _U_MAJ_>
                     ;
             };
+
+            m_ensvid_maj: m_ensvid_maj {
+                label = "ZM_m_ensvid_maj";
+                compatible = "zmk,behavior-macro";
+                #binding-cells = <0>;
+                wait-ms = <40>;
+                tap-ms = <40>;
+                bindings
+                    = <&macro_press &kp LALT>
+                    , <&macro_tap ___0___ ___2___ ___1___  ___6___>
+                    , <&macro_release &kp LALT>
+                    ;
+            };
         };
     };
 
@@ -264,7 +278,7 @@
         COMBO(c_livr, _LIVRE_, 2 12, SYMNAV) // £
         COMBO(c_euro, _EURO__, 3 13, SYMNAV) // €
         // COMBO(c_curr, _CURR__, 4 14, SYMNAV) // ¤
-        COMBO(c_ens_vide, ---, 4 14, SYMNAV) // Ø
+        COMBO(c_ens_vide, _ENSVID 4 14, SYMNAV) // Ø
         COMBO(c_circ, _CIRC__, 10 20, SYMNAV) // ^
         COMBO(c_bslh, _BSLH__, 11 21, SYMNAV) // Backslash
         COMBO(c_tild, _TILDE_, 12 22, SYMNAV) // ~
