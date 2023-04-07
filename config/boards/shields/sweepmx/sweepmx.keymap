@@ -6,7 +6,7 @@
 #include <dt-bindings/zmk/bt.h>
 // #include "keymap_french.h"
 #include "keycodes.h"
-#include "macros.dtsi"
+// #include "macros.dtsi"
 
 // --------------------
 
@@ -24,12 +24,29 @@
 
 // --------------------
 
-// === Macros ===
 // Home row mods macro
 #define HRML(k1,k2,k3,k4,k5) &ht LGUI k1  &ht LALT k2  &ht LCTRL k3  &ht LSHFT k4  &ht RALT k5
 #define HRMR(k1,k2,k3,k4,k5) &ht RALT k1  &ht RSHFT k2  &ht RCTRL k3  &ht LALT k4  &ht LGUI k5
 
-M_ACC_D(m_ecirc_min, _CIRCW_, ___E___)  // Macro pour ê
+// M_ACC_D(m_ecirc_min, _CIRCW_, ___E___)  // Macro pour ê
+
+// --------------------
+
+// === Macros Shorcuts===
+#define __ZMK__ &zed_em_kay
+#define _AGRAVM &m_agrav_maj
+#define _EACUTM &m_eacut_maj
+#define _EGRAVM &m_egrav_maj
+#define _UGRAVM &m_ugrav_maj
+#define _CCEDIM &m_ccedi_maj
+#define _ECIRC_ &m_ecirc_min
+#define _ECIRCM &m_ecirc_maj
+#define _ETREM_ &m_etrem_min
+#define _ETREMM &m_etrem_maj
+#define _ITREM_ &m_itrem_min
+#define _ITREMM &m_itrem_maj
+#define _UTREM_ &m_utrem_min
+#define _UTREMM &m_utrem_maj
 
 // --------------------
 
@@ -46,7 +63,168 @@ M_ACC_D(m_ecirc_min, _CIRCW_, ___E___)  // Macro pour ê
             bindings = <&kp>, <&kp>;
         };
 
-        #include "macros.dtsi"
+        
+        // #include "macros.dtsi"
+
+        macros {
+            zed_em_kay: zed_em_kay {
+                label = "ZM_zed_em_kay";
+                compatible = "zmk,behavior-macro";
+                #binding-cells = <0>;
+                bindings
+                    = <&macro_press &kp LSHFT>
+                    , <&macro_tap &kp Z &kp M &kp K>
+                    , <&macro_release &kp LSHFT>
+                    ;
+            };
+
+            m_agrav_maj: m_agrav_maj {
+                label = "ZM_m_agrav_maj";
+                compatible = "zmk,behavior-macro";
+                #binding-cells = <0>;
+                bindings
+                    = <&macro_tap _GRAVE_ _A_MAJ_>
+                    ;
+            };
+
+            m_eacut_maj: m_eacut_maj {
+                label = "ZM_m_eacut_maj";
+                compatible = "zmk,behavior-macro";
+                #binding-cells = <0>;
+                wait-ms = <40>;
+                tap-ms = <40>;
+                bindings
+                    = <&macro_press &kp LALT>
+                    , <&macro_tap ___1___ ___4___ ___4___>
+                    , <&macro_release &kp LALT>
+                    ;
+            };
+
+            m_egrav_maj: m_egrav_maj {
+                label = "ZM_m_egrav_maj";
+                compatible = "zmk,behavior-macro";
+                #binding-cells = <0>;
+                wait-ms = <40>;
+                tap-ms = <40>;
+                bindings
+                    = <&macro_press &kp LALT>
+                    , <&macro_tap ___0___ ___2___ ___0___ ___0___>
+                    , <&macro_release &kp LALT>
+                    ;
+            };
+
+            // m_egrav_maj: m_egrav_maj {
+            //     label = "ZM_m_egrav_maj";
+            //     compatible = "zmk,behavior-macro";
+            //     #binding-cells = <0>;
+            //     bindings
+            //         = <&macro_tap _GRAVE_>
+            //         , <&macro_press &kp LSHFT>
+            //         , <&macro_tap ___E___>
+            //         , <&macro_release &kp LSHFT>
+            //         ;
+            // };
+
+            m_ugrav_maj: m_ugrav_maj {
+                label = "ZM_m_ugrav_maj";
+                compatible = "zmk,behavior-macro";
+                #binding-cells = <0>;
+                wait-ms = <40>;
+                tap-ms = <40>;
+                bindings
+                    = <&macro_press &kp LALT>
+                    , <&macro_tap ___0___ ___2___ ___1___ ___7___>
+                    , <&macro_release &kp LALT>
+                    ;
+            };
+
+            m_ccedi_maj: m_ccedi_maj {
+                label = "ZM_m_ccedi_maj";
+                compatible = "zmk,behavior-macro";
+                #binding-cells = <0>;
+                wait-ms = <40>;
+                tap-ms = <40>;
+                bindings
+                    = <&macro_press &kp LALT>
+                    , <&macro_tap ___1___ ___2___ ___8___>
+                    , <&macro_release &kp LALT>
+                    ;
+            };
+
+            m_ecirc_min: m_ecirc_min {
+                label = "ZM_m_ecirc_min";
+                compatible = "zmk,behavior-macro";
+                #binding-cells = <0>;
+                bindings
+                    = <&macro_tap _CIRCW_ ___E___>
+                    ;
+            };
+
+            m_ecirc_maj: m_ecirc_maj {
+                label = "ZM_m_ecirc_maj";
+                compatible = "zmk,behavior-macro";
+                #binding-cells = <0>;
+                bindings
+                    = <&macro_tap _CIRCW_ _E_MAJ_>
+                    ;
+            };
+
+            m_etrem_min: m_etrem_min {
+                label = "ZM_m_etrem_min";
+                compatible = "zmk,behavior-macro";
+                #binding-cells = <0>;
+                bindings
+                    = <&macro_tap _TREMA_ ___E___>
+                    ;
+            };
+
+            m_etrem_maj: m_etrem_maj {
+                label = "ZM_m_etrem_maj";
+                compatible = "zmk,behavior-macro";
+                #binding-cells = <0>;
+                bindings
+                    = <&macro_tap _TREMA_ _E_MAJ_>
+                    ;
+            };
+
+            m_itrem_min: m_itrem_min {
+                label = "ZM_m_itrem_min";
+                compatible = "zmk,behavior-macro";
+                #binding-cells = <0>;
+                bindings
+                    = <&macro_tap _TREMA_ ___I___>
+                    ;
+            };
+
+            m_itrem_maj: m_itrem_maj {
+                label = "ZM_m_itrem_maj";
+                compatible = "zmk,behavior-macro";
+                #binding-cells = <0>;
+                bindings
+                    = <&macro_tap _TREMA_ _I_MAJ_>
+                    ;
+            };
+
+            m_utrem_min: m_utrem_min {
+                label = "ZM_m_utrem_min";
+                compatible = "zmk,behavior-macro";
+                #binding-cells = <0>;
+                bindings
+                    = <&macro_tap _TREMA_ ___U___>
+                    ;
+            };
+
+            m_utrem_maj: m_utrem_maj {
+                label = "ZM_m_utrem_maj";
+                compatible = "zmk,behavior-macro";
+                #binding-cells = <0>;
+                bindings
+                    = <&macro_tap _TREMA_ _U_MAJ_>
+                    ;
+            };
+        };
+    };
+
     };
 
     conditional_layers {
@@ -58,7 +236,45 @@ M_ACC_D(m_ecirc_min, _CIRCW_, ___E___)  // Macro pour ê
     };
 
     combos {
-        #include "combos.dtsi"
+        // #include "combos.dtsi"
+
+        compatible = "zmk,combos";
+
+        #define COMBO(NAME, BINDINGS, KEYPOS, LAYERS) \
+        combo_##NAME { \
+            bindings = <BINDINGS>; \
+            key-positions = <KEYPOS>; \
+            layers = <LAYERS>; \
+        };
+
+        /*                KEY POSITIONS
+        ╭────────────────────╮ ╭────────────────────╮
+        │  0   1   2   3   4 │ │  5   6   7   8   9 │
+        │ 10  11  12  13  14 │ │ 15  16  17  18  19 │
+        │ 20  21  22  23  24 │ │ 25  26  27  28  29 │
+        ╰───────────╮ 30  31 │ │ 32  32 ╭───────────╯
+                    ╰────────╯ ╰────────╯
+        */
+
+        // Layer ACCNUM
+        COMBO(c_ecirc_min, &m_ecirc_min, 1 2, ACCNUM) // ê
+        COMBO(c_ecirc_maj, m_ecirc_maj, 11 12, ACCNUM) // Ê
+
+        // Layer SYMNAV
+        COMBO(c_prct, _PRCNT_, 0 10, SYMNAV) // %
+        COMBO(c_doll, _DOLLAR, 1 11, SYMNAV) // $
+        COMBO(c_livr, _LIVRE_, 2 12, SYMNAV) // £
+        COMBO(c_euro, _EURO__, 3 13, SYMNAV) // €
+        // COMBO(c_curr, _CURR__, 4 14, SYMNAV) // ¤
+        COMBO(c_ens_vide, ---, 4 14, SYMNAV) // Ø
+        COMBO(c_circ, _CIRC__, 10 20, SYMNAV) // ^
+        COMBO(c_bslh, _BSLH__, 11 21, SYMNAV) // Backslash
+        COMBO(c_tild, _TILDE_, 12 22, SYMNAV) // ~
+        COMBO(c_arob, __AT___, 13 23, SYMNAV) // @
+        COMBO(c_hash, _HASH__, 14 24, SYMNAV) // #
+
+        // Bluetooth
+        COMBO(c_blth, _BLTH_L, 21 22 30, -1) // Bluetooth
     };
 
     keymap {
@@ -89,13 +305,13 @@ M_ACC_D(m_ecirc_min, _CIRCW_, ___E___)  // Macro pour ê
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮     ╭──────────┬──────────┬──────────┬──────────┬──────────╮
         //│  à    @  │  é    ~ ê│  è    `  │  ù    %  │  ç    ^  │     │  *       │  7       │  8       │  9       │  /       │
-            _______    _______    _______    _______    _______          _N_MLT_    ___7___    ___8___    ___9___    _N_DVD_
+            _AGRAVE    _EACUTE    _EGRAVE    _UGRAVE    _CCEDIL          _N_MLT_    ___7___    ___8___    ___9___    _N_DVD_
         //├──────────┼──────────┼──────────┼──────────┼──────────┤     ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  À       │  É      Ê│  È       │  Ù       │  Ç       │     │  +       │  4       │  5       │  6       │  -       │
-       HRML(_______,   _______,   _______,   _______,   _______)    HRMR(_N_PLS_,   ___4___,   ___5___,   ___6___,   _N_MNS_)
+       HRML(_AGRAVM,   _EACUTM,   _EGRAVM,   _UGRAVM,   _CCEDIM)    HRMR(_N_PLS_,   ___4___,   ___5___,   ___6___,   _N_MNS_)
         //├──────────┼──────────┼──────────┼──────────┼──────────┤     ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  ²       │  ë  (Ë)  │  ï  (Ï)  │  ü  (Ü)  │  ^  ¨     │     │  0       │  1       │  2       │  3       │  .       │
-            _______    _______    _______    _______    _______          ___0___    ___1___    ___2___    ___3___    _N_MNS_
+            _CARRE_    _ETREM_    _ITREM_    _UTREM_    _CIRCW_          ___0___    ___1___    ___2___    ___3___    _N_MNS_
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤     ├──────────┼──────────┼──────────┴──────────┴──────────╯
         //                                 │  HOLD    │  SPACE   │     │  ENTER   │  BSPC L3 │
                                              _______    _______          _______    _______
@@ -109,13 +325,13 @@ M_ACC_D(m_ecirc_min, _CIRCW_, ___E___)  // Macro pour ê
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮     ╭──────────┬──────────┬──────────┬──────────┬──────────╮
         //│  `       │  "       │  '       │  _       │  |       │     │  PAGE UP │  HOME    │  UP      │  END     │  ESCAPE  │
-            _______    _______    _______    _______    _______          _PG_UP_    _HOME__    __UP___    __END__    __ESC__
+            _GRAVE_    __DQT__    __SQT__    _UNDER_    _PIPE__         _PG_UP_    _HOME__    __UP___    __END__    __ESC__
         //├─── % ────┼─── $ ────┼─── £ ────┼─── € ────┼─── Ø ────┤     ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  <       │  [       │  {       │  (       │  &       │     │  PAGE DN │  LEFT    │  DOWN    │  RIGHT   │  TAB     │
-       HRML(_______,   _______,   _______,   _______,   _______)         _PG_DN_    _LEFT__    _DOWN__    _RIGHT_    __TAB__
+       HRML(__LT___,   _LBKT__,   _LBRC__,   _LPAR__,   _AMPS__)         _PG_DN_    _LEFT__    _DOWN__    _RIGHT_    __TAB__
         //├─── ^ ────┼─── \ ────┼─── ~ ────┼─── @ ────┼─── # ────┤     ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  >       │  ]       │  }       │  )       │  =       │     │ CTL BSPC │  BSPC    │  INSERT  │  DELETE  │ CTL DEL  │
-            _______    _______    _______    _______    _______          _______    _BSPC__    __INS__    __DEL__    _CLCK__
+            __GT___    _RBKT__    _RBRC__    _RPAR__    _EQUAL_          _______    _BSPC__    __INS__    __DEL__    _CLCK__
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤     ├──────────┼──────────┼──────────┴──────────┴──────────╯
         //                                 │  TAB  L3 │  SPACE   │     │  ENTER   │  HOLD    │
                                              _______    _______          _______    _______
@@ -154,7 +370,7 @@ M_ACC_D(m_ecirc_min, _CIRCW_, ___E___)  // Macro pour ê
             _BTLDR_    XXXXXXX    XXXXXXX    _BT_P5_    _BT_P2_          XXXXXXX    XXXXXXX    XXXXXXX    XXXXXXX    _BTLDR_
         //├──────────┼──────────┼──────────┼──────────┼──────────┤     ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │  HOLD    │  HOLD    │ CLEAR BT │ PROFIL 3 │     │          │          │          │          │          │
-            XXXXXXX    _______    _______    _BT_CLR    _BT_P3_          XXXXXXX    XXXXXXX    XXXXXXX    XXXXXXX    XXXXXXX
+            __ZMK__    _______    _______    _BT_CLR    _BT_P3_          XXXXXXX    XXXXXXX    XXXXXXX    XXXXXXX    __ZMK__
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤     ├──────────┼──────────┼──────────┴──────────┴──────────╯
         //                                 │  HOLD    │          │     │          │          │
                                              _______    XXXXXXX          XXXXXXX    XXXXXXX
@@ -167,10 +383,10 @@ M_ACC_D(m_ecirc_min, _CIRCW_, ___E___)  // Macro pour ê
         french_layer {
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮     ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│  & 1     │  é 2  ~  │  " 3  #  │  ' 4  {  │  ( 5  [  │     │  - 6  |  │  è 7  `  │  _ 8  \  │  ç 9  ^  │  à 0  @  │
+        //│  & 1     │  é 2  ~  │  " 3  #  │  ' 4  \{ │  ( 5  [  │     │  - 6  |  │  è 7  `  │  _ 8  \  │  ç 9  ^  │  à 0  @  │
             _AMPS__    _EACUTE    __DQT__    __SQT__    _LPAR__          _MINUS_    _EGRAVE    _UNDER_    _CCEDIL    _AGRAVE
         //├──────────┼──────────┼──────────┼──────────┼──────────┤     ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│  ²       │          │          │  = +  }  │  ) °  ]  │     │          │          │          │  ^ ¨      │ $ £  ¤   │
+        //│  ²       │          │          │  = +  \} │  ) °  ]  │     │          │          │          │  ^ ¨      │ $ £  ¤   │
        HRML(_CARRE_,   _______,   _______,   _RPAR__,   _EQUAL_)     HRMR(_______,   _______,   _______,   _CIRCW_,   _DOLLAR)
         //├──────────┼──────────┼──────────┼──────────┼──────────┤     ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  < >     │          │          │          │          │     │          │          │          │  ù %     │  * µ     │
