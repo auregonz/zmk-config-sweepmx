@@ -278,7 +278,7 @@
         COMBO(c_livr, _LIVRE_, 2 12, SYMNAV) // £
         COMBO(c_euro, _EURO__, 3 13, SYMNAV) // €
         // COMBO(c_curr, _CURR__, 4 14, SYMNAV) // ¤
-        COMBO(c_ens_vide, _ENSVID 4 14, SYMNAV) // Ø
+        COMBO(c_ens_vid, _ENSVID, 4 14, SYMNAV) // Ø
         COMBO(c_circ, _CIRC__, 10 20, SYMNAV) // ^
         COMBO(c_bslh, _BSLH__, 11 21, SYMNAV) // Backslash
         COMBO(c_tild, _TILDE_, 12 22, SYMNAV) // ~
