@@ -162,7 +162,7 @@
 #define _CLCK__ &kp CAPSLOCK    // Caps Lock
 #define _CMENU_ &kp K_CMENU     // Context Menu
 
-//  Functions Keys
+// Functions Keys
 #define __F1___ &kp F1          // F1
 #define __F2___ &kp F2          // F2
 #define __F3___ &kp F3          // F3
@@ -175,6 +175,13 @@
 #define __F10__ &kp F10         // F10
 #define __F11__ &kp F11         // F11
 #define __F12__ &kp F12         // F12
+
+// Capital Vowels
+#define _A_MAJ_ &kp Q           // A
+#define _E_MAJ_ &kp E           // E
+#define _U_MAJ_ &kp U           // U
+#define _I_MAJ_ &kp I           // I
+#define _O_MAJ_ &kp O           // O
 
 /* ====================
       NAVIGATION
