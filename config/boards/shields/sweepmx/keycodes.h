@@ -5,10 +5,6 @@
 #define _RESET_ &reset          // Reset : Reset the keyboard side and re-run the firmware flashed to the device
 #define _BTLDR_ &bootloader     // Bootloader Reset : Reset the keyboard side and put it into bootloader mode
 
-// Layers
-#define _BLTH_L &lp 4
-
-
 // Bluetooth
 #define _BT_CLR &bt BT_CLR      // Clear paired host the the selected profile
 #define _BT_NXT &bt BT_NXT      // Select Next Profile
