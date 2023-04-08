@@ -290,13 +290,13 @@
        SHORTCUTS
 ==================== */
 
-#define __CUT__ &kp LC(___X___)         // Cut
-#define _COPY__ &kp LC(___C___)         // Copy
-#define _PASTE_ &kp LC(___V___)         // Paste
+#define __CUT__ &kp LC(X)         // Cut
+#define _COPY__ &kp LC(C)         // Copy
+#define _PASTE_ &kp LC(V)         // Paste
 
-#define _UNDO__ &kp LC(___Z___)         // Undo
-#define _REDO__ &kp LC(___Y___)         // Redo
-#define _S_ALL_ &kp LC(___A___)         // Select All
+#define _UNDO__ &kp LC(W)         // Undo
+#define _REDO__ &kp LC(Y)         // Redo
+#define _S_ALL_ &kp LC(Q)         // Select All
 
-#define __CAS__ &kp LCTL(LALT(__DEL__)) // Ctrl + Alt + Suppr
-#define _WLOCK_ &kp LGUI(___L___)       // Windows + L
+#define __CAS__ &kp LCTL(LALT(DEL)) // Ctrl + Alt + Suppr
+#define _WLOCK_ &kp LGUI(L)       // Windows + L
