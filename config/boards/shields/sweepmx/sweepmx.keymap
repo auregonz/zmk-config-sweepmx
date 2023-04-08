@@ -376,7 +376,7 @@
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮     ╭──────────┬──────────┬──────────┬──────────┬──────────╮
         //│  RESET   │          │          │ PROFIL 4 │ PROFIL 1 │     │          │          │          │          │  RESET   │
-            _RESET_    XXXXXXX    XXXXXXX    _BT_P4_    _BT_P1_          XXXXXXX    XXXXXXX    XXXXXXX    XXXXXXX    _RESET_
+            &reset     XXXXXXX    XXXXXXX    _BT_P4_    _BT_P1_          XXXXXXX    XXXXXXX    XXXXXXX    XXXXXXX    &reset
         //├──────────┼──────────┼──────────┼──────────┼──────────┤     ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│BOOTLOADER│          │          │ PROFIL 5 │ PROFIL 2 │     │          │          │          │          │BOOTLOADER│
             _BTLDR_    XXXXXXX    XXXXXXX    _BT_P5_    _BT_P2_          XXXXXXX    XXXXXXX    XXXXXXX    XXXXXXX    _BTLDR_
