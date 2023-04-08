@@ -29,7 +29,7 @@
                 #binding-cells = <0>;
                 bindings
                     = <&macro_press &kp LSHFT>
-                    , <&macro_tap &kp Z &kp SEMI &kp K>
+                    , <&macro_tap &kp W &kp SEMI &kp K>
                     , <&macro_release &kp LSHFT>
                     ;
             };
@@ -140,7 +140,6 @@
             timeout-ms = <50>;
             key-positions = <0 1>;
             bindings = <&kp ESCAPE>;
-            layers = <1>;
         };
 
         c_kp_numlock {
@@ -245,7 +244,7 @@
         //│  A       │  S       │  D       │  F       │  G       │     │  H       │  J       │  K       │  L       │  M       │
        HRML(A,         S,         D,         F,         G)          HRMR(H,         J,         K,         L,         SEMI)
         //├──────────┼──────────┼──────────┼──────────┼──────────┤     ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│  Z       │  X       │  C       │  V       │  B       │     │  N       │ , ?      │ ; .      │ : /      │ ! §      │
+        //│  W       │  X       │  C       │  V       │  B       │     │  N       │ , ?      │ ; .      │ : /      │ ! §      │
             &kp Z      &kp X      &kp C      &kp V      &kp B            &kp N      &kp M      &kp COMMA  &kp DOT    &kp FSLH
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤     ├──────────┼──────────┼──────────┴──────────┴──────────╯
         //                                 │  TAB L1  │  SPACE   │     │  ENTER   │  BSPC L2 │
@@ -259,10 +258,10 @@
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮     ╭──────────┬──────────┬──────────┬──────────┬──────────╮
         //│  à   @   │  é   ~  ê│  è    `  │  ù   %   │  ç   ^   │     │  *       │  7    numlock  8    │  9       │  /       │
-            &kp N0     &kp N1     &kp N7     &kp SQT    &kp N9      &kp KP_MULTIPLY &kp KP_N7  &kp KP_N8  &kp KP_N9  &kp KP_DIVIDE
+            &kp N0     &kp N2     &kp N7     &kp SQT    &kp N9      &kp KP_MULTIPLY &kp KP_N7  &kp KP_N8  &kp KP_N9  &kp KP_DIVIDE
         //├──────────┼──────────┼──────────┼──────────┼──────────┤     ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  À       │  É      Ê│  È       │  Ù       │  Ç       │     │  +       │  4     enter   5    │  6       │  -       │
-       HRML(&m_agr_mj, &m_eac_mj, &m_egr_mj, &m_ugr_mj, &m_cce_mj)  HRMR(KP_PLUS,   KP_N4,     KP_N5,     KP_N6,     KP_MINUS)
+           &m_agr_mj  &m_eac_mj  &m_egr_mj  &m_ugr_mj  &m_cce_mj    HRMR(KP_PLUS,   KP_N4,     KP_N5,     KP_N6,     KP_MINUS)
         //├──────────┼──────────┼──────────┼──────────┼──────────┤     ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  ²       │  ë     Ë │  ï     Ï │  ü     Ü │  ^ ¨      │     │  0       │  1       │  2       │  3       │  .       │
            &kp GRAVE  &m_etr_mn  &m_itr_mn  &m_utr_mn   &kp LBKT        &kp KP_N0  &kp KP_N1  &kp KP_N2  &kp KP_N3  &kp KP_DOT
