@@ -21,6 +21,19 @@
             global-quick-tap;
             bindings = <&kp>, <&kp>;
         };
+
+        macros {
+            m_zmk: m_zmk {
+                label = "ZM_m_zmk";
+                compatible = "zmk,behavior-macro";
+                #binding-cells = <0>;
+                bindings
+                    = <&macro_press &kp LSHFT>
+                    , <&macro_tap &kp Z &kp M &kp K>
+                    , <&macro_release &kp LSHFT>
+                    ;
+            };
+        };
     };
 
     conditional_layers {
@@ -118,7 +131,7 @@
           &bootloader  &none      &none  &bt BT_SEL 5 &bt BT_SEL 1       &none      &none      &none      &none    &bootloader
         //├──────────┼──────────┼──────────┼──────────┼──────────┤     ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │          │          │ CLEAR BT │PROFILE 2 │     │          │          │          │          │          │
-            &none      &trans     &trans  &bt BT_CLR  &bt BT_SEL 2       &none      &none      &none      &none      &none
+            &m_zmk     &trans     &trans  &bt BT_CLR  &bt BT_SEL 2       &none      &none      &none      &none      &m_zmk
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤     ├──────────┼──────────┼──────────┴──────────┴──────────╯
         //                                 │  HOLD    │  NONE    │     │          │          │
                                              &trans     &none            &none      &none
