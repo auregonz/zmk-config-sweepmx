@@ -286,7 +286,7 @@
         COMBO(c_hash, _HASH__, 14 24, SYMNAV) // #
 
         // Bluetooth
-        COMBO(c_blth, &mo 4, 21 22 30, -1) // Bluetooth
+        //COMBO(c_blth, _BLTH_L, 21 22 30, -1) // Bluetooth
     };
 
     keymap {
