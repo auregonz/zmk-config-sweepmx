@@ -371,7 +371,7 @@
             >;
         };
 
-        4 - BLUETOOTH : Bluetooth functions
+        // 4 - BLUETOOTH : Bluetooth functions
         bluetooth_layer {
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮     ╭──────────┬──────────┬──────────┬──────────┬──────────╮
