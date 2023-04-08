@@ -298,5 +298,5 @@
 #define _REDO__ &kp LC(___Y___)         // Redo
 #define _S_ALL_ &kp LC(___A___)         // Select All
 
-#define __CAS__ &kp LCTL(LALT(__DEL__)  // Ctrl + Alt + Suppr
+#define __CAS__ &kp LCTL(LALT(__DEL__)) // Ctrl + Alt + Suppr
 #define _WLOCK_ &kp LGUI(___L___)       // Windows + L
