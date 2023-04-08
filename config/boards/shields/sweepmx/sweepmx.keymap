@@ -20,7 +20,7 @@
 // === Layer Keys ===
 #define __TAB_1 &lt 1 __TAB__   // Tab or Layer 1 if hold
 #define _BSPC_2 &lt 2 _BSPC__   // Backspace or Layer 2 if hold
-#define _BLTH_L &lt BLTH        // Bluetooth layer
+#define _BLTH_L &mo BLTH        // Bluetooth layer
 
 // --------------------
 
@@ -259,12 +259,6 @@
             layers = <LAYERS>; \
         };
 
-        #define COMBO_ALL(NAME, BINDINGS, KEYPOS) \
-        combo_##NAME { \
-            bindings = <BINDINGS>; \
-            key-positions = <KEYPOS>; \
-        };
-
         /*                KEY POSITIONS
         ╭────────────────────╮ ╭────────────────────╮
         │  0   1   2   3   4 │ │  5   6   7   8   9 │
@@ -292,7 +286,7 @@
         COMBO(c_hash, _HASH__, 14 24, SYMNAV) // #
 
         // Bluetooth
-        COMBO_ALL(c_blth, _BLTH_L, 21 22 30) // Bluetooth
+        COMBO(c_blth, _BLTH_L, 21 22 30, -1) // Bluetooth
     };
 
     keymap {
