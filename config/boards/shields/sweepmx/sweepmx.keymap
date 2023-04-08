@@ -93,6 +93,24 @@
         tri_layer {
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮     ╭──────────┬──────────┬──────────┬──────────┬──────────╮
+        //│  ESCAPE  │  PRSCR   │  SCRLOCK │  PAUSE   │  BRI UP  │     │  VOL UP  │  F9      │  F10     │  F11     │  F12     │
+          &sys_reset   &none      &none  &bt BT_SEL 4 &bt BT_SEL 0       &none      &none      &none      &none      &sys_reset
+        //├──────────┼──────────┼──────────┼──────────┼──────────┤     ├──────────┼──────────┼──────────┼──────────┼──────────┤
+        //│  TAB     │ PREVIOUS │ PLAY/PSE │  NEXT    │  C+A+S   │     │  MUTE    │  F5      │  F6      │  F7      │  F8      │
+          &bootloader  &none      &none  &bt BT_SEL 5 &bt BT_SEL 1       &none      &none      &none      &none    &bootloader
+        //├──────────┼──────────┼──────────┼──────────┼──────────┤     ├──────────┼──────────┼──────────┼──────────┼──────────┤
+        //│  CAPSLK  │  REWIND  │ WIN LOCK │ FFORWARD │  BRI DN  │     │  VOL DN  │  F1      │  F2      │  F3      │  F4      │
+            &none      &none      &none  &bt BT_CLR   &bt BT_SEL 2       &none      &none      &none      &none      &none
+        //╰──────────┴──────────┴──────────┼──────────┼──────────┤     ├──────────┼──────────┼──────────┴──────────┴──────────╯
+        //                                 │  HOLD    │  SPACE   │     │  ENTER   │  HOLD    │
+                                             &trans     &trans           &trans     &trans
+        //                                 ╰──────────┴──────────╯     ╰──────────┴──────────╯
+            >;
+        };
+
+        settings_layer {
+            bindings = <
+        //╭──────────┬──────────┬──────────┬──────────┬──────────╮     ╭──────────┬──────────┬──────────┬──────────┬──────────╮
         //│ RESET    │          │          │PROFILE 4 │PROFILE 0 │     │          │          │          │          │  RESET   │
           &sys_reset   &none      &none  &bt BT_SEL 4 &bt BT_SEL 0       &none      &none      &none      &none      &sys_reset
         //├──────────┼──────────┼──────────┼──────────┼──────────┤     ├──────────┼──────────┼──────────┼──────────┼──────────┤
@@ -100,9 +118,10 @@
           &bootloader  &none      &none  &bt BT_SEL 5 &bt BT_SEL 1       &none      &none      &none      &none    &bootloader
         //├──────────┼──────────┼──────────┼──────────┼──────────┤     ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │          │          │ CLEAR BT │PROFILE 2 │     │          │          │          │          │          │
-            &none      &none      &none  &bt BT_CLR   &bt BT_SEL 2       &none      &none      &none      &none      &none
+            &none      &trans     &trans  &bt BT_CLR  &bt BT_SEL 2       &none      &none      &none      &none      &none
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤     ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                             &trans     &trans           &trans     &trans
+        //                                 │  HOLD    │  NONE    │     │          │          │
+                                             &trans     &none            &none      &none
         //                                 ╰──────────┴──────────╯     ╰──────────┴──────────╯
             >;
         };
