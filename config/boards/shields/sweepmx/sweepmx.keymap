@@ -292,9 +292,6 @@
     keymap {
         compatible = "zmk,keymap";
 
-        #define _RESET_ &reset          // Reset : Reset the keyboard side and re-run the firmware flashed to the device
-        #define _BTLDR_ &bootloader     // Bootloader Reset : Reset the keyboard side and put it into bootloader mode
-
         // 0 - BASE : Base AZERTY layout
         default_layer {
             bindings = <
@@ -366,7 +363,7 @@
             __TAB__    _PREV__    __PP___    _NEXT__    __CAS__          _MUTE__    __F5___    __F6___    __F7___    __F8___
         //├──────────┼──────────┼──────────┼──────────┼──────────┤     ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  CAPSLK  │  REWIND  │ WIN LOCK │ FFORWARD │  BRI DN  │     │  VOL DN  │  F1      │  F2      │  F3      │  F4      │
-            _CLCK__    __RW___    _WLOCK_    __FF___    _BRI_UP          _VOL_DN    __F1___    __F2___    __F3___    __F4___
+            _CLCK__    __RW___    _WLOCK_    __FF___   _BRI_UP          _VOL_DN    __F1___    __F2___    __F3___    __F4___
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤     ├──────────┼──────────┼──────────┴──────────┴──────────╯
         //                                 │  HOLD    │  SPACE   │     │  ENTER   │  HOLD    │
                                              _______    _______          _______    _______
