@@ -3,6 +3,7 @@ on:
     branches:
       - master
       - develop
+      - verif
   pull_request:
     branches:
       - master
