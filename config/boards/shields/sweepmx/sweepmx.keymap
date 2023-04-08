@@ -38,10 +38,17 @@
 
     combos {
         compatible = "zmk,combos";
+
         c_euro {
             timeout-ms = <50>;
             key-positions = <0 1>;
             bindings = <&kp RA(E)>;
+        };
+
+        c_blth_l {
+            timeout-ms = <50>;
+            key-positions = <21 22 30>;
+            bindings = <&mo 4>;
         };
     };
 
