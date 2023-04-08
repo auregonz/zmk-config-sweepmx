@@ -29,8 +29,99 @@
                 #binding-cells = <0>;
                 bindings
                     = <&macro_press &kp LSHFT>
-                    , <&macro_tap &kp Z &kp M &kp K>
+                    , <&macro_tap &kp Z &kp SEMI &kp K>
                     , <&macro_release &kp LSHFT>
+                    ;
+            };
+
+            m_agr_mj: m_agr_mj {
+                label = "ZM_m_agr_mj";
+                compatible = "zmk,behavior-macro";
+                #binding-cells = <0>;
+                bindings
+                    = <&macro_press &kp LALT>
+                    , <&macro_tap &kp KP_N0 &kp KP_N1 &kp KP_N9 &kp KP_N2>
+                    , <&macro_release &kp LALT>
+                    ;
+            };
+            m_eac_mj: m_eac_mj {
+                label = "ZM_m_eac_mj";
+                compatible = "zmk,behavior-macro";
+                #binding-cells = <0>;
+                wait-ms = <40>;
+                tap-ms = <40>;
+                bindings
+                    = <&macro_press &kp LALT>
+                    , <&macro_tap &kp KP_N1 &kp KP_N4 &kp KP_N4>
+                    , <&macro_release &kp LALT>
+                    ;
+            };
+            m_egr_mj: m_egr_mj {
+                label = "ZM_m_egr_mj";
+                compatible = "zmk,behavior-macro";
+                #binding-cells = <0>;
+                wait-ms = <40>;
+                tap-ms = <40>;
+                bindings
+                    = <&macro_press &kp LALT>
+                    , <&macro_tap &kp KP_N0 &kp KP_N2 &kp KP_N0 &kp KP_N0>
+                    , <&macro_release &kp LALT>
+                    ;
+            };
+            m_ugr_mj: m_ugr_mj {
+                label = "ZM_m_ugr_mj";
+                compatible = "zmk,behavior-macro";
+                #binding-cells = <0>;
+                wait-ms = <40>;
+                tap-ms = <40>;
+                bindings
+                    = <&macro_press &kp LALT>
+                    , <&macro_tap &kp KP_N0 &kp KP_N2 &kp KP_N1 &kp KP_N7>
+                    , <&macro_release &kp LALT>
+                    ;
+            };
+            m_cce_mj: m_cce_mj {
+                label = "ZM_m_cce_mj";
+                compatible = "zmk,behavior-macro";
+                #binding-cells = <0>;
+                wait-ms = <40>;
+                tap-ms = <40>;
+                bindings
+                    = <&macro_press &kp LALT>
+                    , <&macro_tap &kp KP_N1 &kp KP_N2 &kp KP_N8>
+                    , <&macro_release &kp LALT>
+                    ;
+            };
+
+            m_etr_mn: m_etr_mn {
+                label = "ZM_m_etr_mn";
+                compatible = "zmk,behavior-macro";
+                #binding-cells = <0>;
+                bindings = <&macro_tap &kp LS(LBKT) &kp E>;
+            };
+            m_itr_mn: m_itr_mn {
+                label = "ZM_m_itr_mn";
+                compatible = "zmk,behavior-macro";
+                #binding-cells = <0>;
+                bindings = <&macro_tap &kp LS(LBKT) &kp I>;
+            };
+            m_utr_mn: m_utr_mn {
+                label = "ZM_m_utr_mn";
+                compatible = "zmk,behavior-macro";
+                #binding-cells = <0>;
+                bindings = <&macro_tap &kp LS(LBKT) &kp U>;
+            };
+
+            m_ensvid_maj: m_ensvid_maj {
+                label = "ZM_m_ensvid_maj";
+                compatible = "zmk,behavior-macro";
+                #binding-cells = <0>;
+                wait-ms = <40>;
+                tap-ms = <40>;
+                bindings
+                    = <&macro_press &kp LALT>
+                    , <&macro_tap &kp KP_N0 &kp KP_N2 &kp KP_N1 &kp KP_N6>
+                    , <&macro_release &kp LALT>
                     ;
             };
         };
@@ -39,16 +130,99 @@
     combos {
         compatible = "zmk,combos";
 
-        c_euro {
-            timeout-ms = <50>;
-            key-positions = <0 1>;
-            bindings = <&kp RA(E)>;
-        };
-
         c_blth_l {
             timeout-ms = <50>;
             key-positions = <21 22 30>;
             bindings = <&mo 4>;
+        };
+
+        c_esc {
+            timeout-ms = <50>;
+            key-positions = <0 1>;
+            bindings = <&kp ESCAPE>;
+            layers = <1>;
+        };
+
+        c_kp_numlock {
+            timeout-ms = <50>;
+            key-positions = <6 7>;
+            bindings = <&kp KP_NUM>;
+            layers = <1>;
+        };
+        c_kp_enter {
+            timeout-ms = <50>;
+            key-positions = <16 17>;
+            bindings = <&kp KP_ENTER>;
+            layers = <1>;
+        };
+
+        c_prct {
+            timeout-ms = <50>;
+            key-positions = <0 10>;
+            bindings = <&kp LS(SQT)>;
+            layers = <2>;
+        };
+        c_doll {
+            timeout-ms = <50>;
+            key-positions = <1 11>;
+            bindings = <&kp RBKT>;
+            layers = <2>;
+        };
+        c_livr {
+            timeout-ms = <50>;
+            key-positions = <2 12>;
+            bindings = <&kp LS(RBKT)>;
+            layers = <2>;
+        };
+        c_euro {
+            timeout-ms = <50>;
+            key-positions = <3 13>;
+            bindings = <&kp RA(E)>;
+            layers = <2>;
+        };
+        c_curr {
+            timeout-ms = <50>;
+            key-positions = <1 2 3>;
+            bindings = <&kp RA(RBKT)>;
+            layers = <2>;
+        };
+
+        c_ens_vid {
+            timeout-ms = <50>;
+            key-positions = <4 14>;
+            bindings = <&m_ensvid_maj>;
+            layers = <2>;
+        };
+
+        c_circ {
+            timeout-ms = <50>;
+            key-positions = <10 20>;
+            bindings = <&kp RA(N9)>;
+            layers = <2>;
+        };
+        c_bslh {
+            timeout-ms = <50>;
+            key-positions = <11 21>;
+            bindings = <&kp RA(N8)>;
+            layers = <2>;
+        };
+        c_tild {
+            timeout-ms = <50>;
+            key-positions = <12 22>;
+            bindings = <&kp RA(N2)>;
+            layers = <2>;
+        };
+        c_arob {
+            timeout-ms = <50>;
+            key-positions = <13 23>;
+            bindings = <&kp RA(N0)>;
+            layers = <2>;
+        };
+        c_hash {
+            timeout-ms = <50>;
+            key-positions = <14 24>;
+            bindings = <&kp RA(N3)>;
+            layers = <2>;
         };
     };
 
@@ -75,23 +249,23 @@
             &kp Z      &kp X      &kp C      &kp V      &kp B            &kp N      &kp M      &kp COMMA  &kp DOT    &kp FSLH
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤     ├──────────┼──────────┼──────────┴──────────┴──────────╯
         //                                 │  TAB L1  │  SPACE   │     │  ENTER   │  BSPC L2 │
-                                            &lt 2 TAB   &kp SPACE       &kp ENTER  &lt 1 BSPC
+                                            &lt 1 TAB   &kp SPACE       &kp ENTER  &lt 2 BSPC
         //                                 ╰──────────┴──────────╯     ╰──────────┴──────────╯
         //                                   [ACCNUM]                               [SYMNAV]
             >;
         };
 
-        right_layer {
+        left_layer {
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮     ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│  à   @   │  é   ~  ê│  è    `  │  ù   %   │  ç   ^   │     │  *       │  7       │  8       │  9       │  /       │
-            &kp N0     &kp N1     &kp N7     &kp SQT    &kp N9      &kp KP_MULTIPLY &kp KP_N1  &kp KP_N2  &kp KP_N3   &kp KP_DIVIDE
+        //│  à   @   │  é   ~  ê│  è    `  │  ù   %   │  ç   ^   │     │  *       │  7    numlock  8    │  9       │  /       │
+            &kp N0     &kp N1     &kp N7     &kp SQT    &kp N9      &kp KP_MULTIPLY &kp KP_N7  &kp KP_N8  &kp KP_N9  &kp KP_DIVIDE
         //├──────────┼──────────┼──────────┼──────────┼──────────┤     ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│  À       │  É      Ê│  È       │  Ù       │  Ç       │     │  +       │  4       │  5       │  6       │  -       │
-            &trans     &trans     &trans     &trans     &trans      HRMR(KP_PLUS,   KP_N4,     KP_N5,     KP_N6,     KP_MINUS)
+        //│  À       │  É      Ê│  È       │  Ù       │  Ç       │     │  +       │  4     enter   5    │  6       │  -       │
+       HRML(&m_agr_mj, &m_eac_mj, &m_egr_mj, &m_ugr_mj, &m_cce_mj)  HRMR(KP_PLUS,   KP_N4,     KP_N5,     KP_N6,     KP_MINUS)
         //├──────────┼──────────┼──────────┼──────────┼──────────┤     ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  ²       │  ë     Ë │  ï     Ï │  ü     Ü │  ^ ¨      │     │  0       │  1       │  2       │  3       │  .       │
-           &kp GRAVE   &trans     &trans     &trans     &kp LBKT        &kp KP_N0  &kp KP_N1  &kp KP_N2  &kp KP_N3  &kp KP_DOT
+           &kp GRAVE  &m_etr_mn  &m_itr_mn  &m_utr_mn   &kp LBKT        &kp KP_N0  &kp KP_N1  &kp KP_N2  &kp KP_N3  &kp KP_DOT
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤     ├──────────┼──────────┼──────────┴──────────┴──────────╯
         //                                 │  HOLD    │  SPACE   │     │  ENTER   │  BSPC L3 │
                                              &trans     &trans           &trans     &trans
@@ -100,7 +274,7 @@
             >;
         };
 
-        left_layer {
+        right_layer {
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮     ╭──────────┬──────────┬──────────┬──────────┬──────────╮
         //│  `       │  "       │  '       │  _       │  |       │     │ PAGE UP  │  HOME    │  UP      │  END     │  ESCAPE  │
@@ -126,7 +300,7 @@
           &kp ESCAPE &kp PSCRN  &kp SLCK &kp PAUSE_BREAK &kp C_BRI_UP  &kp C_VOL_UP &kp F9     &kp F10    &kp F11    &kp F12
         //├──────────┼──────────┼──────────┼──────────┼──────────┤     ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  TAB     │ PREVIOUS │ PLAY/PSE │  NEXT    │  C+A+S   │     │  MUTE    │  F5      │  F6      │  F7      │  F8      │
-      &kp TAB  &kp C_PREV &kp C_PLAY_PAUSE &kp C_NEXT &kp LC(LA(DEL))  &kp C_MUTE   &kp F5     &kp F6     &kp F7     &kp F8
+        HRML(TAB,      C_PREV,    C_PP,      C_NEXT,    LC(LA(DEL)))   &kp C_MUTE   &kp F5     &kp F6     &kp F7     &kp F8
         //├──────────┼──────────┼──────────┼──────────┼──────────┤     ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  CAPSLK  │  REWIND  │ WIN LOCK │ FFORWARD │  BRI DN  │     │  VOL DN  │  F1      │  F2      │  F3      │  F4      │
         &kp CAPSLOCK   &kp C_RW  &kp LG(L)  &kp C_FF  &kp C_BRI_DN     &kp C_VOL_DN &kp F1     &kp F2     &kp F3     &kp F4
