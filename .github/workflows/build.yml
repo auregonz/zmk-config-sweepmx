@@ -3,6 +3,7 @@ on:
     branches:
       - master
       - develop
+      - azerty
   pull_request:
     branches:
       - master
