@@ -371,24 +371,24 @@
             >;
         };
 
-        // 4 - BLUETOOTH : Bluetooth functions
-        // bluetooth_layer {
-        //     bindings = <
-        // //╭──────────┬──────────┬──────────┬──────────┬──────────╮     ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        // //│  RESET   │          │          │ PROFIL 4 │ PROFIL 1 │     │          │          │          │          │  RESET   │
-        //     _RESET_    XXXXXXX    XXXXXXX    _BT_P4_    _BT_P1_          XXXXXXX    XXXXXXX    XXXXXXX    XXXXXXX    _RESET_
-        // //├──────────┼──────────┼──────────┼──────────┼──────────┤     ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        // //│BOOTLOADER│          │          │ PROFIL 5 │ PROFIL 2 │     │          │          │          │          │BOOTLOADER│
-        //     _BTLDR_    XXXXXXX    XXXXXXX    _BT_P5_    _BT_P2_          XXXXXXX    XXXXXXX    XXXXXXX    XXXXXXX    _BTLDR_
-        // //├──────────┼──────────┼──────────┼──────────┼──────────┤     ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        // //│          │  HOLD    │  HOLD    │ CLEAR BT │ PROFIL 3 │     │          │          │          │          │          │
-        //     __ZMK__    _______    _______    _BT_CLR    _BT_P3_          XXXXXXX    XXXXXXX    XXXXXXX    XXXXXXX    __ZMK__
-        // //╰──────────┴──────────┴──────────┼──────────┼──────────┤     ├──────────┼──────────┼──────────┴──────────┴──────────╯
-        // //                                 │  HOLD    │          │     │          │          │
-        //                                      _______    XXXXXXX          XXXXXXX    XXXXXXX
-        // //                                 ╰──────────┴──────────╯     ╰──────────┴──────────╯
-        //     >;
-        // };
+        4 - BLUETOOTH : Bluetooth functions
+        bluetooth_layer {
+            bindings = <
+        //╭──────────┬──────────┬──────────┬──────────┬──────────╮     ╭──────────┬──────────┬──────────┬──────────┬──────────╮
+        //│  RESET   │          │          │ PROFIL 4 │ PROFIL 1 │     │          │          │          │          │  RESET   │
+            _RESET_    XXXXXXX    XXXXXXX    _BT_P4_    _BT_P1_          XXXXXXX    XXXXXXX    XXXXXXX    XXXXXXX    _RESET_
+        //├──────────┼──────────┼──────────┼──────────┼──────────┤     ├──────────┼──────────┼──────────┼──────────┼──────────┤
+        //│BOOTLOADER│          │          │ PROFIL 5 │ PROFIL 2 │     │          │          │          │          │BOOTLOADER│
+            _BTLDR_    XXXXXXX    XXXXXXX    _BT_P5_    _BT_P2_          XXXXXXX    XXXXXXX    XXXXXXX    XXXXXXX    _BTLDR_
+        //├──────────┼──────────┼──────────┼──────────┼──────────┤     ├──────────┼──────────┼──────────┼──────────┼──────────┤
+        //│          │  HOLD    │  HOLD    │ CLEAR BT │ PROFIL 3 │     │          │          │          │          │          │
+            __ZMK__    _______    _______    _BT_CLR    _BT_P3_          XXXXXXX    XXXXXXX    XXXXXXX    XXXXXXX    __ZMK__
+        //╰──────────┴──────────┴──────────┼──────────┼──────────┤     ├──────────┼──────────┼──────────┴──────────┴──────────╯
+        //                                 │  HOLD    │          │     │          │          │
+                                             _______    XXXXXXX          XXXXXXX    XXXXXXX
+        //                                 ╰──────────┴──────────╯     ╰──────────┴──────────╯
+            >;
+        };
 
 
         // 5 - FRENCH : Layer with French Top Row and ISO Keys

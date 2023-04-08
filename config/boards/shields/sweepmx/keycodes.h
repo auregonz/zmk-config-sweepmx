@@ -2,7 +2,7 @@
 #define XXXXXXX &none           // None
 #define _______ &trans          // Transparent
 
-#define _RESET_ &reset          // Reset : Reset the keyboard side and re-run the firmware flashed to the device
+#define _RESET_ &sys_reset          // Reset : Reset the keyboard side and re-run the firmware flashed to the device
 #define _BTLDR_ &bootloader     // Bootloader Reset : Reset the keyboard side and put it into bootloader mode
 
 // Bluetooth
