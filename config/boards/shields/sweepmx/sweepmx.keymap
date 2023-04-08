@@ -6,8 +6,8 @@
 #include <dt-bindings/zmk/bt.h>
 
 // Home row mods macro
-#define HRML(k1,k2,k3,k4) &ht LSHFT k1  &ht LALT k2  &ht LCTRL k3  &ht LGUI k4
-#define HRMR(k1,k2,k3,k4) &ht RGUI k1  &ht RCTRL k2  &ht RALT k3  &ht RSHFT k4
+#define HRML(k1,k2,k3,k4,k5) &ht LGUI k1  &ht LALT k2  &ht LCTRL k3  &ht LSHFT k4  &ht RALT k5
+#define HRMR(k1,k2,k3,k4,k5) &ht RALT k1  &ht RSHFT k2  &ht RCTRL k3  &ht LALT k4  &ht LGUI k5
 
 / {
     behaviors {
@@ -40,13 +40,15 @@
             &kp Q      &kp W      &kp E      &kp R      &kp T            &kp Y      &kp U      &kp I      &kp O      &kp P
         //├──────────┼──────────┼──────────┼──────────┼──────────┤     ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  A       │  S       │  D       │  F       │  G       │     │  H       │  J       │  K       │  L       │  M       │
-            HRML(A,        S,         D,         F)     &kp G            &kp H      HRMR(J,        K,         L,        SEMI)
+       HRML(A,         S,         D,         F,         G)          HRMR(H,         J,         K,         L,         SEMI)
         //├──────────┼──────────┼──────────┼──────────┼──────────┤     ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  Z       │  X       │  C       │  V       │  B       │     │  N       │ , ?      │ ; .      │ : /      │ ! §      │
             &kp Z      &kp X      &kp C      &kp V      &kp B            &kp N      &kp M      &kp COMMA  &kp DOT    &kp FSLH
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤     ├──────────┼──────────┼──────────┴──────────┴──────────╯
+        //                                 │  TAB L1  │  SPACE   │     │  ENTER   │  BSPC L2 │
                                             &lt 2 TAB   &kp SPACE       &kp ENTER  &lt 1 BSPC
         //                                 ╰──────────┴──────────╯     ╰──────────┴──────────╯
+        //                                   [ACCNUM]                               [SYMNAV]
             >;
         };
 
@@ -57,13 +59,15 @@
             &kp N0     &kp N1     &kp N7     &kp SQT    &kp N9      &kp KP_MULTIPLY &kp KP_N1  &kp KP_N2  &kp KP_N3   &kp KP_DIVIDE
         //├──────────┼──────────┼──────────┼──────────┼──────────┤     ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  À       │  É      Ê│  È       │  Ù       │  Ç       │     │  +       │  4       │  5       │  6       │  -       │
-            &trans     &trans     &trans     &trans     &trans          &kp KP_PLUS &kp KP_N4  &kp KP_N5  &kp KP_N6 &kp KP_MINUS
+            &trans     &trans     &trans     &trans     &trans      HRMR(KP_PLUS,   KP_N4,     KP_N5,     KP_N6,     KP_MINUS)
         //├──────────┼──────────┼──────────┼──────────┼──────────┤     ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  ²       │  ë     Ë │  ï     Ï │  ü     Ü │  ^ ¨      │     │  0       │  1       │  2       │  3       │  .       │
            &kp GRAVE   &trans     &trans     &trans     &kp LBKT        &kp KP_N0  &kp KP_N1  &kp KP_N2  &kp KP_N3  &kp KP_DOT
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤     ├──────────┼──────────┼──────────┴──────────┴──────────╯
+        //                                 │  HOLD    │  SPACE   │     │  ENTER   │  BSPC L3 │
                                              &trans     &trans           &trans     &trans
         //                                 ╰──────────┴──────────╯     ╰──────────┴──────────╯
+        //                                                                         [FUNCTIONS]
             >;
         };
 
@@ -74,13 +78,15 @@
            &kp RA(N7)  &kp N3     &kp N4     &kp N8    &kp RA(N6)        &kp PG_UP  &kp HOME   &kp UP     &kp END    &kp ESCAPE
         //├─── % ────┼─── $ ────┼─── £ ────┼─── € ────┼─── Ø ────┤     ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  <       │  [       │  {       │  (       │  &       │     │ PAGE DN  │  LEFT    │  DOWN    │  RIGHT   │  TAB     │
-            &kp NUBS   &kp RA(N5) &kp RA(N4) &kp N5     &kp N1           &kp PG_DN  &kp LEFT   &kp DOWN   &kp RIGHT  &kp TAB
+       HRML(NUBS,      RA(N5),    RA(N4),    N5,        N1)         HRMR(PG_DN,     LEFT,      DOWN,      RIGHT,     TAB)
         //├─── ^ ────┼─── \ ────┼─── ~ ────┼─── @ ────┼─── # ────┤     ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  >       │  ]       │  }       │  )       │  =       │     │ CTL BSPC │  BSPC    │  INSERT  │  DELETE  │ CTL DEL  │
      &kp LS(NUBS) &kp RA(MINUS) &kp RA(EQUAL) &kp MINUS &kp EQUAL      &kp LC(BSPC) &kp BSPC   &kp INS    &kp DEL    &kp LC(DEL)
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤     ├──────────┼──────────┼──────────┴──────────┴──────────╯
+        //                                 │  TAB L3  │  SPACE   │     │  ENTER   │  HOLD    │
                                              &trans     &trans           &trans     &trans
         //                                 ╰──────────┴──────────╯     ╰──────────┴──────────╯
+        //                                 [FUNCTIONS]
             >;
         };
 
