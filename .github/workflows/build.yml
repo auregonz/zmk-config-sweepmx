@@ -4,6 +4,7 @@ on:
       - master
       - develop
       - verif
+      - invert
   pull_request:
     branches:
       - master
