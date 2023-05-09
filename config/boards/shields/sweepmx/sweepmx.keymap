@@ -159,69 +159,69 @@
             timeout-ms = <50>;
             key-positions = <0 10>;
             bindings = <&kp LS(SQT)>;
-            layers = <2>;
+            layers = <1>;
         };
         c_doll {
             timeout-ms = <50>;
             key-positions = <1 11>;
             bindings = <&kp RBKT>;
-            layers = <2>;
+            layers = <1>;
         };
         c_livr {
             timeout-ms = <50>;
             key-positions = <2 12>;
             bindings = <&kp LS(RBKT)>;
-            layers = <2>;
+            layers = <1>;
         };
         c_euro {
             timeout-ms = <50>;
             key-positions = <3 13>;
             bindings = <&kp RA(E)>;
-            layers = <2>;
+            layers = <1>;
         };
         c_curr {
             timeout-ms = <50>;
             key-positions = <1 2 3>;
             bindings = <&kp RA(RBKT)>;
-            layers = <2>;
+            layers = <1>;
         };
 
         c_ens_vid {
             timeout-ms = <50>;
             key-positions = <4 14>;
             bindings = <&m_ensvid_maj>;
-            layers = <2>;
+            layers = <1>;
         };
 
         c_circ {
             timeout-ms = <50>;
             key-positions = <10 20>;
             bindings = <&kp RA(N9)>;
-            layers = <2>;
+            layers = <1>;
         };
         c_bslh {
             timeout-ms = <50>;
             key-positions = <11 21>;
             bindings = <&kp RA(N8)>;
-            layers = <2>;
+            layers = <1>;
         };
         c_tild {
             timeout-ms = <50>;
             key-positions = <12 22>;
             bindings = <&kp RA(N2)>;
-            layers = <2>;
+            layers = <1>;
         };
         c_arob {
             timeout-ms = <50>;
             key-positions = <13 23>;
             bindings = <&kp RA(N0)>;
-            layers = <2>;
+            layers = <1>;
         };
         c_hash {
             timeout-ms = <50>;
             key-positions = <14 24>;
             bindings = <&kp RA(N3)>;
-            layers = <2>;
+            layers = <1>;
         };
     };
 
@@ -238,7 +238,7 @@
         default_layer {
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮     ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│  A       │  Z       │  E       │  R       │  T       │     │  Y       │  U       │  I       │  O       │  P       │
+        //│  A    ESC│  Z       │  E       │  R       │  T       │     │  Y       │  U       │  I       │  O       │  P       │
             &kp Q      &kp W      &kp E      &kp R      &kp T            &kp Y      &kp U      &kp I      &kp O      &kp P
         //├──────────┼──────────┼──────────┼──────────┼──────────┤     ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  A       │  S       │  D       │  F       │  G       │     │  H       │  J       │  K       │  L       │  M       │
@@ -250,14 +250,14 @@
         //                                 │  TAB L1  │  SPACE   │     │  ENTER   │  BSPC L2 │
                                             &lt 1 TAB   &kp SPACE       &kp ENTER  &lt 2 BSPC
         //                                 ╰──────────┴──────────╯     ╰──────────┴──────────╯
-        //                                   [ACCNUM]                               [SYMNAV]
+        //                                   [SYMNUM]                               [ACCNAV]
             >;
         };
 
         left_layer {
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮     ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│  `       │  "       │  '       │  _       │  |       │     │  *       │  7    numlock  8    │  9       │  /       │
+        //│  `    ESC│  "       │  '       │  _       │  |       │     │  *       │  7    numlock  8    │  9       │  /       │
            &kp RA(N7)  &kp N3     &kp N4     &kp N8    &kp RA(N6)   &kp KP_MULTIPLY &kp KP_N7  &kp KP_N8  &kp KP_N9  &kp KP_DIVIDE
         //├─── % ────┼─── $ ────┼─── £ ────┼─── € ────┼─── Ø ────┤     ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  <       │  [       │  {       │  (       │  &       │     │  +       │  4     enter   5    │  6       │  -       │
@@ -276,7 +276,7 @@
         right_layer {
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮     ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│  À       │  É      Ê│  È       │  Ù       │  Ç       │     │ PAGE UP  │  HOME    │  UP      │  END     │  ESCAPE  │
+        //│  À    ESC│  É      Ê│  È       │  Ù       │  Ç       │     │ PAGE UP  │  HOME    │  UP      │  END     │  ESCAPE  │
            &m_agr_mj  &m_eac_mj  &m_egr_mj  &m_ugr_mj  &m_cce_mj         &kp PG_UP  &kp HOME   &kp UP     &kp END    &kp ESCAPE
         //├──────────┼──────────┼──────────┼──────────┼──────────┤     ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  à   @   │  é   ~  ê│  è    `  │  ù   %   │  ç   ^   │     │ PAGE DN  │  LEFT    │  DOWN    │  RIGHT   │  TAB     │
@@ -313,16 +313,16 @@
         settings_layer {
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮     ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│ RESET    │          │          │PROFILE 4 │PROFILE 0 │     │          │          │          │          │  RESET   │
+        //│  RESET   │          │          │PROFILE 4 │PROFILE 0 │     │          │          │          │          │  RESET   │
           &sys_reset   &none      &none  &bt BT_SEL 4 &bt BT_SEL 0       &none      &none      &none      &none      &sys_reset
         //├──────────┼──────────┼──────────┼──────────┼──────────┤     ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│BOOTLOADER│          │          │PROFILE 5 │PROFILE 1 │     │          │          │          │          │BOOTLOADER│
           &bootloader  &none      &none  &bt BT_SEL 5 &bt BT_SEL 1       &none      &none      &none      &none    &bootloader
         //├──────────┼──────────┼──────────┼──────────┼──────────┤     ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│          │          │          │ CLEAR BT │PROFILE 2 │     │          │          │          │          │          │
+        //│  ZMK     │  HOLD    │  HOLD    │ CLEAR BT │PROFILE 2 │     │          │          │          │          │  ZMK     │
             &m_zmk     &trans     &trans  &bt BT_CLR  &bt BT_SEL 2       &none      &none      &none      &none      &m_zmk
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤     ├──────────┼──────────┼──────────┴──────────┴──────────╯
-        //                                 │  HOLD    │  NONE    │     │          │          │
+        //                                 │  HOLD    │          │     │          │          │
                                              &trans     &none            &none      &none
         //                                 ╰──────────┴──────────╯     ╰──────────┴──────────╯
             >;
