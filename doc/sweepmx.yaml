@@ -46,18 +46,18 @@ layers:
     - { t: ":", s: "/" }
     - { t: "!", s: "§" }
 
-    - { t: "TAB", h: "ACCNUM" }
+    - { t: "TAB", h: "SYMNUM" }
     - "SPACE"
 
     - "ENTER"
-    - { t: "BKSPC", h: "SYMNAV" }
+    - { t: "BKSPC", h: "ACCNAV" }
 
-  ACCNUM:
-    - "à"
-    - "é"
-    - "è"
-    - "ù"
-    - "ç"
+  SYMNUM:
+    - "`"
+    - '"'
+    - "'"
+    - "_"
+    - "|"
 
     - "*"
     - "7"
@@ -65,11 +65,11 @@ layers:
     - "9"
     - "/"
 
-    - { t: "À", h: "WIN" }
-    - { t: "É", h: "ALT" }
-    - { t: "È", h: "LCTRL" }
-    - { t: "Ù", h: "LSHFT" }
-    - { t: "Ç", h: "ALTGR" }
+    - { t: "<", h: "WIN" }
+    - { t: "[", h: "ALT" }
+    - { t: "{", h: "LCTRL" }
+    - { t: "(", h: "LSHFT" }
+    - { t: "&", h: "ALTGR" }
 
     - { t: "+", h: "ALTGR" }
     - { t: "4", h: "RSHFT" }
@@ -77,11 +77,11 @@ layers:
     - { t: "6", h: "ALT" }
     - { t: "-", h: "WIN" }
 
-    - "²"
-    - { t: "ë", h: "Ë" }
-    - { t: "ï", h: "Ï" }
-    - { t: "ü", h: "Ü" }
-    - { t: "^", s: "¨" }
+    - ">"
+    - "]"
+    - "}"
+    - ")"
+    - "="
 
     - "0"
     - "1"
@@ -95,12 +95,12 @@ layers:
     - "ENTER"
     - { t: "BKSPC", h: "FUNCTIONS" }
 
-  SYMNAV:
-    - "`"
-    - '"'
-    - "'"
-    - "_"
-    - "|"
+  ACCNAV:
+    - "À"
+    - "É"
+    - "È"
+    - "Ù"
+    - "Ç"
 
     - "PAGE UP"
     - "HOME"
@@ -108,11 +108,11 @@ layers:
     - "END"
     - "ESCAPE"
 
-    - { t: "<", h: "WIN" }
-    - { t: "[", h: "ALT" }
-    - { t: "{", h: "LCTRL" }
-    - { t: "(", h: "LSHFT" }
-    - { t: "&", h: "ALTGR" }
+    - { t: "à", h: "WIN" }
+    - { t: "é", h: "ALT" }
+    - { t: "è", h: "LCTRL" }
+    - { t: "ù", h: "LSHFT" }
+    - { t: "ç", h: "ALTGR" }
 
     - "PAGE DOWN"
     - "LEFT"
@@ -120,11 +120,11 @@ layers:
     - "RIGHT"
     - "CONTEXT MENU"
 
-    - ">"
-    - "]"
-    - "}"
-    - ")"
-    - "="
+    - "²"
+    - { t: "ë", h: "Ë" }
+    - { t: "ï", h: "Ï" }
+    - { t: "ü", h: "Ü" }
+    - { t: "^", s: "¨" }
 
     - "CTRL + BSPC"
     - "BSPC"
@@ -151,11 +151,11 @@ layers:
     - "F11"
     - "F12"
 
-    - "TAB"
-    - "PREVIOUS"
-    - "PLAY PAUSE"
-    - "NEXT"
-    - "C+A+S"
+    - { t: "TAB", h: "WIN" }
+    - { t: "PREVIOUS", h: "ALT" }
+    - { t: "PLAY PAUSE", h: "LCTRL" }
+    - { t: "NEXT", h: "LSHFT" }
+    - { t: "C+A+S", h: "ALTGR" }
 
     - "MUTE"
     - "F5"
@@ -206,7 +206,7 @@ layers:
     - { type: ghost }
     - "BTLDR"
 
-    - { type: ghost }
+    - { t: "ZMK", type: ghost }
     - { type: held }
     - { type: held }
     - "BT CLR"
@@ -216,7 +216,7 @@ layers:
     - { type: ghost }
     - { type: ghost }
     - { type: ghost }
-    - { type: ghost }
+    - { t: "ZMK", type: ghost }
 
     - { type: held }
     - { type: ghost }
@@ -225,23 +225,33 @@ layers:
     - { type: ghost }
 
 combos:
-  - { p: [1, 2], k: "ê", l: ["ACCNUM"] }
-  - { p: [11, 12], k: "Ê", l: ["ACCNUM"] }
-  - { p: [0, 0], k: "@", l: ["ACCNUM"], a: top, dendron: false, offset: -0.1, type: ghost }
-  - { p: [1, 1], k: "~", l: ["ACCNUM"], a: top, dendron: false, offset: -0.1, type: ghost }
-  - { p: [2, 2], k: "`", l: ["ACCNUM"], a: top, dendron: false, offset: -0.1, type: ghost }
+  - { p: [0, 1], k: "ESC", l: ["BASE", "SYMNUM", "ACCNAV"] }
 
-  - { p: [21, 21], k: "Ë", l: ["ACCNUM"], a: bottom, dendron: false, offset: -0.1, type: held }
-  - { p: [22, 22], k: "~", l: ["ACCNUM"], a: bottom, dendron: false, offset: -0.1, type: held }
-  - { p: [23, 23], k: "`", l: ["ACCNUM"], a: bottom, dendron: false, offset: -0.1, type: held }
+  - { p: [6, 7], k: "NUMLOCK", l: ["SYMNUM"] }
+  - { p: [16, 17], k: "ENTER", l: ["SYMNUM"] }
 
-  - { p: [0, 10], k: "%", l: ["SYMNAV"] }
-  - { p: [1, 11], k: "$", l: ["SYMNAV"] }
-  - { p: [2, 12], k: "£", l: ["SYMNAV"] }
-  - { p: [3, 13], k: "€", l: ["SYMNAV"] }
-  - { p: [4, 14], k: "Ø", l: ["SYMNAV"] }
-  - { p: [10, 20], k: "^", l: ["SYMNAV"], a: right }
-  - { p: [11, 21], k: '\', l: ["SYMNAV"], a: right }
-  - { p: [12, 22], k: "~", l: ["SYMNAV"], a: right }
-  - { p: [13, 23], k: "@", l: ["SYMNAV"], a: right }
-  - { p: [14, 24], k: "#", l: ["SYMNAV"], a: right }
+  - { p: [0, 10], k: "%", l: ["SYMNUM"] }
+  - { p: [1, 11], k: "$", l: ["SYMNUM"] }
+  - { p: [2, 12], k: "£", l: ["SYMNUM"] }
+  - { p: [3, 13], k: "€", l: ["SYMNUM"] }
+  - { p: [1, 2, 3], k: "¤", l: ["SYMNUM"], a: top }
+  - { p: [4, 14], k: "Ø", l: ["SYMNUM"] }
+  - { p: [10, 20], k: "^", l: ["SYMNUM"], a: right }
+  - { p: [11, 21], k: '\', l: ["SYMNUM"], a: right }
+  - { p: [12, 22], k: "~", l: ["SYMNUM"], a: right }
+  - { p: [13, 23], k: "@", l: ["SYMNUM"], a: right }
+  - { p: [14, 24], k: "#", l: ["SYMNUM"], a: right }
+
+  - { p: [1, 2], k: "Ê", l: ["ACCNAV"] }
+  - { p: [11, 12], k: "ê", l: ["ACCNAV"] }
+
+  # Uniquement pour la visibilité - Fait en combinaison avec AltGr
+  # => Ajouter une option Double Tap ? (Tap-Dance)
+  - { p: [10, 10], k: "@", l: ["ACCNAV"], a: top, dendron: false, offset: -0.1, type: ghost }
+  - { p: [11, 11], k: "~", l: ["ACCNAV"], a: top, dendron: false, offset: -0.1, type: ghost }
+  - { p: [12, 12], k: "`", l: ["ACCNAV"], a: top, dendron: false, offset: -0.1, type: ghost }
+
+  # A implémenter : Double Tap ? (Tap-Dance)
+  - { p: [21, 21], k: "Ë", l: ["ACCNAV"], a: bottom, dendron: false, offset: -0.1, type: held }
+  - { p: [22, 22], k: "Ï", l: ["ACCNAV"], a: bottom, dendron: false, offset: -0.1, type: held }
+  - { p: [23, 23], k: "Ü", l: ["ACCNAV"], a: bottom, dendron: false, offset: -0.1, type: held }
