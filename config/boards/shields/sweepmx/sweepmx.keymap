@@ -276,11 +276,11 @@
         right_layer {
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮     ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│  à   @   │  é   ~  ê│  è    `  │  ù   %   │  ç   ^   │     │ PAGE UP  │  HOME    │  UP      │  END     │  ESCAPE  │
-            &kp N0     &kp N2     &kp N7     &kp SQT    &kp N9           &kp PG_UP  &kp HOME   &kp UP     &kp END    &kp ESCAPE
+        //│  À       │  É      Ê│  È       │  Ù       │  Ç       │     │ PAGE UP  │  HOME    │  UP      │  END     │  ESCAPE  │
+           &m_agr_mj  &m_eac_mj  &m_egr_mj  &m_ugr_mj  &m_cce_mj         &kp PG_UP  &kp HOME   &kp UP     &kp END    &kp ESCAPE
         //├──────────┼──────────┼──────────┼──────────┼──────────┤     ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│  À       │  É      Ê│  È       │  Ù       │  Ç       │     │ PAGE DN  │  LEFT    │  DOWN    │  RIGHT   │  TAB     │
-           &m_agr_mj  &m_eac_mj  &m_egr_mj  &m_ugr_mj  &m_cce_mj         &kp PG_DN  &kp LEFT   &kp DOWN   &kp RIGHT  &kp TAB
+        //│  à   @   │  é   ~  ê│  è    `  │  ù   %   │  ç   ^   │     │ PAGE DN  │  LEFT    │  DOWN    │  RIGHT   │  TAB     │
+       HRML(N0,        N2,        N7,        SQT,       N9)              &kp PG_DN  &kp LEFT   &kp DOWN   &kp RIGHT  &kp TAB
         //├──────────┼──────────┼──────────┼──────────┼──────────┤     ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  ²       │  ë     Ë │  ï     Ï │  ü     Ü │  ^ ¨      │     │ CTL BSPC │  BSPC    │  INSERT  │  DELETE  │ CTL DEL  │
            &kp GRAVE  &m_etr_mn  &m_itr_mn  &m_utr_mn   &kp LBKT       &kp LC(BSPC) &kp BSPC   &kp INS    &kp DEL    &kp LC(DEL)
