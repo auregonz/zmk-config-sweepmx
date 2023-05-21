@@ -5,6 +5,7 @@ on:
       - develop
       - verif
       - invert
+      - ctrl-combos
   pull_request:
     branches:
       - master
