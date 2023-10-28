@@ -5,6 +5,17 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 
+
+//                  KEY POSITIONS
+//  ╭────────────────────╮ ╭────────────────────╮
+//  │  0   1   2   3   4 │ │  5   6   7   8   9 │
+//  │ 10  11  12  13  14 │ │ 15  16  17  18  19 │
+//  │ 20  21  22  23  24 │ │ 25  26  27  28  29 │
+//  ╰───────────╮ 30  31 │ │ 32  32 ╭───────────╯
+//              ╰────────╯ ╰────────╯
+//
+
+
 // Home row mods macro
 #define HRML(k1,k2,k3,k4,k5) &ht LGUI k1  &ht LALT k2  &ht LCTRL k3  &ht LSHFT k4  &ht RALT k5
 #define HRMR(k1,k2,k3,k4,k5) &ht RALT k1  &ht RSHFT k2  &ht RCTRL k3  &ht LALT k4  &ht LGUI k5
@@ -23,6 +34,7 @@
         };
 
         macros {
+            // Tape ZMK
             m_zmk: m_zmk {
                 label = "ZM_m_zmk";
                 compatible = "zmk,behavior-macro";
@@ -34,6 +46,7 @@
                     ;
             };
 
+            // À (Alt+0192)
             m_agr_mj: m_agr_mj {
                 label = "ZM_m_agr_mj";
                 compatible = "zmk,behavior-macro";
@@ -44,6 +57,7 @@
                     , <&macro_release &kp LALT>
                     ;
             };
+            // É (Alt+144)
             m_eac_mj: m_eac_mj {
                 label = "ZM_m_eac_mj";
                 compatible = "zmk,behavior-macro";
@@ -56,6 +70,7 @@
                     , <&macro_release &kp LALT>
                     ;
             };
+            // È (Alt+0200)
             m_egr_mj: m_egr_mj {
                 label = "ZM_m_egr_mj";
                 compatible = "zmk,behavior-macro";
@@ -68,6 +83,7 @@
                     , <&macro_release &kp LALT>
                     ;
             };
+            // Ù (Alt+0217)
             m_ugr_mj: m_ugr_mj {
                 label = "ZM_m_ugr_mj";
                 compatible = "zmk,behavior-macro";
@@ -80,6 +96,7 @@
                     , <&macro_release &kp LALT>
                     ;
             };
+            // Ç (Alt+128)
             m_cce_mj: m_cce_mj {
                 label = "ZM_m_cce_mj";
                 compatible = "zmk,behavior-macro";
@@ -93,18 +110,21 @@
                     ;
             };
 
+            // ë
             m_etr_mn: m_etr_mn {
                 label = "ZM_m_etr_mn";
                 compatible = "zmk,behavior-macro";
                 #binding-cells = <0>;
                 bindings = <&macro_tap &kp LS(LBKT) &kp E>;
             };
+            // ï
             m_itr_mn: m_itr_mn {
                 label = "ZM_m_itr_mn";
                 compatible = "zmk,behavior-macro";
                 #binding-cells = <0>;
                 bindings = <&macro_tap &kp LS(LBKT) &kp I>;
             };
+            // ü
             m_utr_mn: m_utr_mn {
                 label = "ZM_m_utr_mn";
                 compatible = "zmk,behavior-macro";
@@ -112,6 +132,7 @@
                 bindings = <&macro_tap &kp LS(LBKT) &kp U>;
             };
 
+            // Ensemble vide majuscule Ø
             m_ensvid_maj: m_ensvid_maj {
                 label = "ZM_m_ensvid_maj";
                 compatible = "zmk,behavior-macro";
@@ -130,24 +151,28 @@
     combos {
         compatible = "zmk,combos";
 
+        // Layer Bluetooth
         c_blth_l {
             timeout-ms = <50>;
             key-positions = <21 22 30>;
             bindings = <&mo 4>;
         };
 
+        // Échap
         c_esc {
             timeout-ms = <50>;
             key-positions = <0 1>;
             bindings = <&kp ESCAPE>;
         };
 
+        // Ver. Num.
         c_kp_numlock {
             timeout-ms = <50>;
             key-positions = <6 7>;
             bindings = <&kp KP_NUM>;
             layers = <1>;
         };
+        // Entrée
         c_kp_enter {
             timeout-ms = <50>;
             key-positions = <16 17>;
@@ -155,30 +180,35 @@
             layers = <1>;
         };
 
+        // Pourcentage %
         c_prct {
             timeout-ms = <50>;
             key-positions = <0 10>;
             bindings = <&kp LS(SQT)>;
             layers = <1>;
         };
+        // Symbole Dollar $
         c_doll {
             timeout-ms = <50>;
             key-positions = <1 11>;
             bindings = <&kp RBKT>;
             layers = <1>;
         };
+        // Symbole Livre Sterling £
         c_livr {
             timeout-ms = <50>;
             key-positions = <2 12>;
             bindings = <&kp LS(RBKT)>;
             layers = <1>;
         };
+        // Symbole Euro €
         c_euro {
             timeout-ms = <50>;
             key-positions = <3 13>;
             bindings = <&kp RA(E)>;
             layers = <1>;
         };
+        // Symbole monétaire générique ¤
         c_curr {
             timeout-ms = <50>;
             key-positions = <1 2 3>;
@@ -186,6 +216,7 @@
             layers = <1>;
         };
 
+        // Ensemble vide majuscule Ø
         c_ens_vid {
             timeout-ms = <50>;
             key-positions = <4 14>;
@@ -193,30 +224,35 @@
             layers = <1>;
         };
 
+        // Accent chassant circonflexe "Caret" ^
         c_circ {
             timeout-ms = <50>;
             key-positions = <10 20>;
             bindings = <&kp RA(N9)>;
             layers = <1>;
         };
+        // Antislash
         c_bslh {
             timeout-ms = <50>;
             key-positions = <11 21>;
             bindings = <&kp RA(N8)>;
             layers = <1>;
         };
+        // Diacritique Tilde ~ (touche morte)
         c_tild {
             timeout-ms = <50>;
             key-positions = <12 22>;
             bindings = <&kp RA(N2)>;
             layers = <1>;
         };
+        // Arobase @
         c_arob {
             timeout-ms = <50>;
             key-positions = <13 23>;
             bindings = <&kp RA(N0)>;
             layers = <1>;
         };
+        // Croisillon #
         c_hash {
             timeout-ms = <50>;
             key-positions = <14 24>;
