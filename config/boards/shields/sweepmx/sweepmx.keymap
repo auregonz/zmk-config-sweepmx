@@ -20,6 +20,11 @@
 #define HRML(k1,k2,k3,k4,k5) &ht LGUI k1  &ht LALT k2  &ht LCTRL k3  &ht LSHFT k4  &ht RALT k5
 #define HRMR(k1,k2,k3,k4,k5) &ht RALT k1  &ht RSHFT k2  &ht RCTRL k3  &ht LALT k4  &ht LGUI k5
 
+// e/i/u trema : tap -> minuscule, hold -> majuscule
+#define E_TREMA &ht &m_etr_mj &m_etr_mn
+#define I_TREMA &ht &m_itr_mj &m_itr_mn
+#define U_TREMA &ht &m_utr_mj &m_utr_mn
+
 / {
     behaviors {
         ht: hold_tap {
@@ -130,6 +135,27 @@
                 compatible = "zmk,behavior-macro";
                 #binding-cells = <0>;
                 bindings = <&macro_tap &kp LS(LBKT) &kp U>;
+            };
+            // Ë
+            m_etr_mj: m_etr_mj {
+                label = "ZM_m_etr_mj";
+                compatible = "zmk,behavior-macro";
+                #binding-cells = <0>;
+                bindings = <&macro_tap &kp LS(LBKT) &kp LS(E)>;
+            };
+            // Ï
+            m_itr_mj: m_itr_mj {
+                label = "ZM_m_itr_mj";
+                compatible = "zmk,behavior-macro";
+                #binding-cells = <0>;
+                bindings = <&macro_tap &kp LS(LBKT) &kp LS(I)>;
+            };
+            // Ü
+            m_utr_mj: m_utr_mj {
+                label = "ZM_m_utr_mj";
+                compatible = "zmk,behavior-macro";
+                #binding-cells = <0>;
+                bindings = <&macro_tap &kp LS(LBKT) &kp LS(U)>;
             };
 
             // ê
@@ -290,6 +316,14 @@
             bindings = <&m_eci_mj>;
             layers = <2>;
         };
+
+        // Mu µ
+        c_mu {
+            timeout-ms = <50>;
+            key-positions = <3 13>;
+            bindings = <&kp LS(NUBS)>;
+            layers = <2>;
+        };
     };
 
     conditional_layers {
@@ -345,12 +379,12 @@
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮     ╭──────────┬──────────┬──────────┬──────────┬──────────╮
         //│  À    ESC│  É      Ê│  È       │  Ù       │  Ç       │     │ PAGE UP  │  HOME    │  UP      │  END     │  ESCAPE  │
            &m_agr_mj  &m_eac_mj  &m_egr_mj  &m_ugr_mj  &m_cce_mj         &kp PG_UP  &kp HOME   &kp UP     &kp END    &kp ESCAPE
-        //├──────────┼──────────┼──────────┼──────────┼──────────┤     ├──────────┼──────────┼──────────┼──────────┼──────────┤
+        //├──────────┼──────────┼──────────┼─── µ ────┼──────────┤     ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  à   @   │  é   ~  ê│  è    `  │  ù   %   │  ç   ^   │     │ PAGE DN  │  LEFT    │  DOWN    │  RIGHT   │  CMENU   │
        HRML(N0,        N2,        N7,        SQT,       N9)              &kp PG_DN  &kp LEFT   &kp DOWN   &kp RIGHT  &kp K_CMENU
         //├──────────┼──────────┼──────────┼──────────┼──────────┤     ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  ²       │  ë     Ë │  ï     Ï │  ü     Ü │  ^ ¨      │     │ CTL BSPC │  BSPC    │  INSERT  │  DELETE  │ CTL DEL  │
-           &kp GRAVE  &m_etr_mn  &m_itr_mn  &m_utr_mn   &kp LBKT       &kp LC(BSPC) &kp BSPC   &kp INS    &kp DEL    &kp LC(DEL)
+           &kp GRAVE   E_TREMA    I_TREMA    U_TREMA    &kp LBKT       &kp LC(BSPC) &kp BSPC   &kp INS    &kp DEL    &kp LC(DEL)
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤     ├──────────┼──────────┼──────────┴──────────┴──────────╯
         //                                 │  TAB L3  │  SPACE   │     │  ENTER   │  HOLD    │
                                              &trans     &trans           &trans     &trans

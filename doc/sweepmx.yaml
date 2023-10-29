@@ -244,6 +244,7 @@ combos:
 
   - { p: [1, 2], k: "Ê", l: ["ACCNAV"] }
   - { p: [11, 12], k: "ê", l: ["ACCNAV"] }
+  - { p: [3, 13], k: "µ", l: ["ACCNAV"] }
 
   # Uniquement pour la visibilité - Fait en combinaison avec AltGr
   # => Ajouter une option Double Tap ? (Tap-Dance)
