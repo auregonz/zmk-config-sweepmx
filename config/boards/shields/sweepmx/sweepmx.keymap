@@ -132,6 +132,22 @@
                 bindings = <&macro_tap &kp LS(LBKT) &kp U>;
             };
 
+            // ê
+            m_eci_mn: m_eci_mn {
+                label = "ZM_m_eci_mn";
+                compatible = "zmk,behavior-macro";
+                #binding-cells = <0>;
+                bindings = <&macro_tap &kp LBKT &kp E>;
+            };
+
+            // Ê
+            m_eci_mj: m_eci_mj {
+                label = "ZM_m_eci_mj";
+                compatible = "zmk,behavior-macro";
+                #binding-cells = <0>;
+                bindings = <&macro_tap &kp LBKT &kp LS(E)>;
+            };
+
             // Ensemble vide majuscule Ø
             m_ensvid_maj: m_ensvid_maj {
                 label = "ZM_m_ensvid_maj";
@@ -259,6 +275,21 @@
             bindings = <&kp RA(N3)>;
             layers = <1>;
         };
+
+        // ê
+        c_eci_mn {
+            timeout-ms = <50>;
+            key-positions = <11 12>;
+            bindings = <&m_eci_mn>;
+            layers = <2>;
+        };
+        // Ê
+        c_eci_mj {
+            timeout-ms = <50>;
+            key-positions = <1 2>;
+            bindings = <&m_eci_mj>;
+            layers = <2>;
+        };
     };
 
     conditional_layers {
@@ -315,8 +346,8 @@
         //│  À    ESC│  É      Ê│  È       │  Ù       │  Ç       │     │ PAGE UP  │  HOME    │  UP      │  END     │  ESCAPE  │
            &m_agr_mj  &m_eac_mj  &m_egr_mj  &m_ugr_mj  &m_cce_mj         &kp PG_UP  &kp HOME   &kp UP     &kp END    &kp ESCAPE
         //├──────────┼──────────┼──────────┼──────────┼──────────┤     ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│  à   @   │  é   ~  ê│  è    `  │  ù   %   │  ç   ^   │     │ PAGE DN  │  LEFT    │  DOWN    │  RIGHT   │  TAB     │
-       HRML(N0,        N2,        N7,        SQT,       N9)              &kp PG_DN  &kp LEFT   &kp DOWN   &kp RIGHT  &kp TAB
+        //│  à   @   │  é   ~  ê│  è    `  │  ù   %   │  ç   ^   │     │ PAGE DN  │  LEFT    │  DOWN    │  RIGHT   │  CMENU   │
+       HRML(N0,        N2,        N7,        SQT,       N9)              &kp PG_DN  &kp LEFT   &kp DOWN   &kp RIGHT  &kp K_CMENU
         //├──────────┼──────────┼──────────┼──────────┼──────────┤     ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  ²       │  ë     Ë │  ï     Ï │  ü     Ü │  ^ ¨      │     │ CTL BSPC │  BSPC    │  INSERT  │  DELETE  │ CTL DEL  │
            &kp GRAVE  &m_etr_mn  &m_itr_mn  &m_utr_mn   &kp LBKT       &kp LC(BSPC) &kp BSPC   &kp INS    &kp DEL    &kp LC(DEL)
