@@ -321,7 +321,7 @@
         c_mu {
             timeout-ms = <50>;
             key-positions = <3 13>;
-            bindings = <&kp LS(NUBS)>;
+            bindings = <&kp LS(BSLH)>;
             layers = <2>;
         };
     };
