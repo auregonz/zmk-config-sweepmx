@@ -188,6 +188,30 @@
                     ;
             };
         };
+
+        td0: tap_dance_0 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_DANCE_0";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp N1>, <&kp N2>, <&kp N3>;
+        };
+
+        tder: tap_dance_er {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_DANCE_ER";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp E>, <&kp LS(R)>;
+        };
+
+        tderu: tap_dance_eru {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_DANCE_ERU";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp E>, <&kp LS(R)>, <&m_utr_mj>;
+        };
     };
 
     combos {
@@ -384,7 +408,7 @@
        HRML(N0,        N2,        N7,        SQT,       N9)              &kp PG_DN  &kp LEFT   &kp DOWN   &kp RIGHT  &kp K_CMENU
         //├──────────┼──────────┼──────────┼──────────┼──────────┤     ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  ²       │  ë     Ë │  ï     Ï │  ü     Ü │  ^ ¨      │     │ CTL BSPC │  BSPC    │  INSERT  │  DELETE  │ CTL DEL  │
-           &kp GRAVE   E_TREMA    I_TREMA    U_TREMA    &kp LBKT       &kp LC(BSPC) &kp BSPC   &kp INS    &kp DEL    &kp LC(DEL)
+           &kp GRAVE  &m_etr_mn  &m_itr_mn  &m_utr_mn   &kp LBKT       &kp LC(BSPC) &kp BSPC   &kp INS    &kp DEL    &kp LC(DEL)
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤     ├──────────┼──────────┼──────────┴──────────┴──────────╯
         //                                 │  TAB L3  │  SPACE   │     │  ENTER   │  HOLD    │
                                              &trans     &trans           &trans     &trans
@@ -417,11 +441,11 @@
         //│  RESET   │          │          │PROFILE 4 │PROFILE 0 │     │          │          │          │          │  RESET   │
           &sys_reset   &none      &none  &bt BT_SEL 4 &bt BT_SEL 0       &none      &none      &none      &none      &sys_reset
         //├──────────┼──────────┼──────────┼──────────┼──────────┤     ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│BOOTLOADER│          │          │PROFILE 5 │PROFILE 1 │     │          │          │          │          │BOOTLOADER│
-          &bootloader  &none      &none  &bt BT_SEL 5 &bt BT_SEL 1       &none      &none      &none      &none    &bootloader
+        //│BOOTLOADER│          │          │PROFILE 5 │PROFILE 1 │     │ (test)   │ (test)   │ (test)   │          │BOOTLOADER│
+          &bootloader  &none      &none  &bt BT_SEL 5 &bt BT_SEL 1       &td0       &tder      &tderu     &none    &bootloader
         //├──────────┼──────────┼──────────┼──────────┼──────────┤     ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│  ZMK     │  HOLD    │  HOLD    │ CLEAR BT │PROFILE 2 │     │          │          │          │          │  ZMK     │
-            &m_zmk     &trans     &trans  &bt BT_CLR  &bt BT_SEL 2       &none      &none      &none      &none      &m_zmk
+        //│  ZMK     │  HOLD    │  HOLD    │ CLEAR BT │PROFILE 2 │     │ Ë (test) │ Ï (test) │ Ü (test) │          │  ZMK     │
+            &m_zmk     &trans     &trans  &bt BT_CLR  &bt BT_SEL 2       &m_etr_mj  &m_itr_mj  &m_utr_mj   &none      &m_zmk
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤     ├──────────┼──────────┼──────────┴──────────┴──────────╯
         //                                 │  HOLD    │          │     │          │          │
                                              &trans     &none            &none      &none
