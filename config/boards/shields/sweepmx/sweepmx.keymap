@@ -4,6 +4,7 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/outputs.h>
 
 
 //                  KEY POSITIONS
@@ -379,20 +380,20 @@
 
         settings_layer {
             bindings = <
-        //╭──────────┬──────────┬──────────┬──────────┬──────────╮     ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│  RESET   │          │          │PROFILE 4 │PROFILE 0 │     │          │          │          │          │  RESET   │
-          &sys_reset   &none      &none  &bt BT_SEL 4 &bt BT_SEL 0       &none      &none      &none      &none      &sys_reset
-        //├──────────┼──────────┼──────────┼──────────┼──────────┤     ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│BOOTLOADER│          │          │PROFILE 5 │PROFILE 1 │     │          │          │          │          │BOOTLOADER│
-          &bootloader  &none      &none  &bt BT_SEL 5 &bt BT_SEL 1       &none      &none      &none      &none    &bootloader
-        //├──────────┼──────────┼──────────┼──────────┼──────────┤     ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│  ZMK     │  HOLD    │  HOLD    │ CLEAR BT │PROFILE 2 │     │          │          │          │          │  ZMK     │
-            &m_zmk     &trans     &trans  &bt BT_CLR  &bt BT_SEL 2       &none      &none      &none      &none      &m_zmk
-        //╰──────────┴──────────┴──────────┼──────────┼──────────┤     ├──────────┼──────────┼──────────┴──────────┴──────────╯
-        //                                 │  HOLD    │          │     │          │          │
-                                             &trans     &none            &none      &none
-        //                                 ╰──────────┴──────────╯     ╰──────────┴──────────╯
+        //╭────────────────┬────────────────┬────────────────┬────────────────┬────────────────╮     ╭──────────┬──────────┬──────────┬──────────┬──────────╮
+        //│     RESET      │     BT_PRV     │     BT_NXT     │   PROFILE 4    │   PROFILE 1    │     │          │          │          │          │  RESET   │
+            &sys_reset       &bt BT_PRV       &bt BT_PRV       &bt BT_SEL 3     &bt BT_SEL 0           &none      &none      &none      &none     &sys_reset
+        //├────────────────┼────────────────┼────────────────┼────────────────┼────────────────┤     ├──────────┼──────────┼──────────┼──────────┼──────────┤
+        //│  BOOTLOADER    │    OUT_USB     │    OUT_BLE     │   PROFILE 5    │   PROFILE 2    │     │          │          │          │          │BOOTLOADER│
+            &bootloader      &out OUT_USB     &out OUT_BLE     &bt BT_SEL 4     &bt BT_SEL 1           &none      &none      &none      &none     &bootloader
+        //├────────────────┼────────────────┼────────────────┼────────────────┼────────────────┤     ├──────────┼──────────┼──────────┼──────────┼──────────┤
+        //│  ZMK           │  HOLD          │   HOLD         │   CLEAR BT     │   PROFILE 3    │     │          │          │          │          │  ZMK     │
+            &m_zmk           &trans           &trans           &bt BT_CLR  &bt BT_SEL 2                &none      &none      &none      &none      &m_zmk
+        //╰────────────────┴────────────────┴────────────────┼────────────────┼────────────────┤     ├──────────┼──────────┼──────────┴──────────┴──────────╯
+        //                                                   │  HOLD          │   BT_CLR_ALL   │     │          │          │
+                                                               &trans           &bt BT_CLR_ALL         &none      &none
+        //                                                   ╰────────────────┴────────────────╯     ╰──────────┴──────────╯
             >;
         };
-    };
+    }; 
 };

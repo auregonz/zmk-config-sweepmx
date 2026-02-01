@@ -183,8 +183,8 @@ layers:
 
   BLUETOOTH:
     - "RESET"
-    - { type: ghost }
-    - { type: ghost }
+    - "BT PRV"
+    - "BT NXT"
     - "PROFIL 4"
     - "PROFIL 1"
 
@@ -195,8 +195,8 @@ layers:
     - "RESET"
 
     - "BTLDR"
-    - { type: ghost }
-    - { type: ghost }
+    - "OUTPUT USB"
+    - "OUTPUT BLE"
     - "PROFIL 5"
     - "PROFIL 2"
 
@@ -219,7 +219,7 @@ layers:
     - { t: "ZMK", type: ghost }
 
     - { type: held }
-    - { type: ghost }
+    - "BT CLR ALL"
 
     - { type: ghost }
     - { type: ghost }
