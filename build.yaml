@@ -17,3 +17,5 @@ include:
     shield: sweepmx_left
   - board: nice_nano
     shield: sweepmx_right
+  - board: nice_nano
+    shield: settings_reset
